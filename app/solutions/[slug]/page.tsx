@@ -56,7 +56,7 @@ const solutionData: {
                 Antenna System (DAS) is the definitive solution, acting as a
                 network of antennas strategically placed throughout your facility
                 to amplify and distribute strong, reliable cellular coverage to
-                every corner—from the parking garage to the penthouse.
+                every corner—from the parking garage to the penthouse testing.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start">
