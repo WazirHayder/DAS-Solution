@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {} from "@/components/icons";
+import { } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -119,49 +119,49 @@ export function Header() {
     description: string;
     icon: React.ReactNode;
   }[] = [
-    {
-      title: "Healthcare",
-      href: "/industries/healthcare",
-      description: "Reliable connectivity for critical medical communications.",
-      icon: <Hospital className="h-5 w-5 text-[#246598]" />,
-    },
-    {
-      title: "Corporate & Enterprise",
-      href: "/industries/corporate",
-      description: "Seamless coverage for modern offices and campuses.",
-      icon: <Building className="h-5 w-5 text-[#8fc447]" />,
-    },
-    {
-      title: "Airports & Transportation",
-      href: "/industries/transportation",
-      description: "Massive capacity networks for travelers and staff.",
-      icon: <Plane className="h-5 w-5 text-[#246598]" />,
-    },
-    {
-      title: "Retail & Malls",
-      href: "/industries/retail",
-      description: "Enhancing shopper experience and store operations.",
-      icon: <ShoppingBag className="h-5 w-5 text-[#8fc447]" />,
-    },
-    {
-      title: "Logistics & Warehousing",
-      href: "/industries/logistics",
-      description: "Connecting automated systems and workforce devices.",
-      icon: <Warehouse className="h-5 w-5 text-[#8fc447]" />,
-    },
-    {
-      href: "/industries/education",
-      title: "Education",
-      description: "High-density Wi-Fi for modern learning environments.",
-      icon: <School className="h-5 w-5 text-[#246598]" />,
-    },
-    {
-      href: "/industries/hospitality",
-      title: "Hospitality",
-      description: "Exceptional guest connectivity and hotel operations.",
-      icon: <Hotel className="h-5 w-5 text-[#8fc447]" />,
-    },
-  ];
+      {
+        title: "Healthcare",
+        href: "/industries/healthcare",
+        description: "Reliable connectivity for critical medical communications.",
+        icon: <Hospital className="h-5 w-5 text-[#246598]" />,
+      },
+      {
+        title: "Corporate & Enterprise",
+        href: "/industries/corporate",
+        description: "Seamless coverage for modern offices and campuses.",
+        icon: <Building className="h-5 w-5 text-[#8fc447]" />,
+      },
+      {
+        title: "Airports & Transportation",
+        href: "/industries/transportation",
+        description: "Massive capacity networks for travelers and staff.",
+        icon: <Plane className="h-5 w-5 text-[#246598]" />,
+      },
+      {
+        title: "Retail & Malls",
+        href: "/industries/retail",
+        description: "Enhancing shopper experience and store operations.",
+        icon: <ShoppingBag className="h-5 w-5 text-[#8fc447]" />,
+      },
+      {
+        title: "Logistics & Warehousing",
+        href: "/industries/logistics",
+        description: "Connecting automated systems and workforce devices.",
+        icon: <Warehouse className="h-5 w-5 text-[#8fc447]" />,
+      },
+      {
+        href: "/industries/education",
+        title: "Education",
+        description: "High-density Wi-Fi for modern learning environments.",
+        icon: <School className="h-5 w-5 text-[#246598]" />,
+      },
+      {
+        href: "/industries/hospitality",
+        title: "Hospitality",
+        description: "Exceptional guest connectivity and hotel operations.",
+        icon: <Hotel className="h-5 w-5 text-[#8fc447]" />,
+      },
+    ];
 
   const otherLinks = [
     { href: "/pricing", label: "Pricing" },
@@ -171,15 +171,13 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg ${
-        isScrolled ? "shadow-lg" : ""
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg ${isScrolled ? "shadow-lg" : ""
+        }`}
     >
       {/* Top Bar */}
       <div
-        className={`bg-[#8fc447] border-b border-green-600/50 transition-all duration-300 ${
-          isScrolled ? "h-0 overflow-hidden" : "h-10"
-        }`}
+        className={`bg-[#8fc447] border-b border-green-600/50 transition-all duration-300 ${isScrolled ? "h-0 overflow-hidden" : "h-10"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-xs text-white">
           <div className="flex items-center gap-4">
@@ -325,13 +323,13 @@ export function Header() {
             </div>
 
             {/* Industries Mega Menu */}
-            <NavigationMenu>
-              <NavigationMenuList>
+            <NavigationMenu viewport={false} className="!justify-start">
+              <NavigationMenuList className="justify-start">
                 <NavigationMenuItem className="h-20 flex items-center group">
                   <NavigationMenuTrigger className="text-sm font-medium bg-transparent hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent data-[active]:!bg-transparent data-[state=open]:hover:!bg-transparent text-gray-700 hover:text-[#246598] transition-colors">
                     Industries
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="!left-1/2 !-translate-x-[40%] md:!left-1/2 md:!-translate-x-[45%] p-0">
                     <div className="w-[900px] lg:w-[1000px] p-6 bg-white rounded-2xl shadow-2xl border border-gray-100">
                       <div className="grid grid-cols-12 gap-6">
                         {/* Left Side - Featured Content */}
@@ -487,9 +485,8 @@ export function Header() {
               >
                 <span>Solutions</span>
                 <span
-                  className={`transition-transform ${
-                    isSolutionsOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${isSolutionsOpen ? "rotate-180" : ""
+                    }`}
                 >
                   ▼
                 </span>
@@ -518,9 +515,8 @@ export function Header() {
               >
                 <span>Industries</span>
                 <span
-                  className={`transition-transform ${
-                    isIndustriesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${isIndustriesOpen ? "rotate-180" : ""
+                    }`}
                 >
                   ▼
                 </span>
