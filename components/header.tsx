@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { } from "@/components/icons";
+import {} from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -36,7 +36,6 @@ import {
   WrenchIcon,
 } from "lucide-react";
 import { PhoneIcon, MailIcon, MenuIcon, XIcon } from "@/components/icons";
-
 
 export function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -120,49 +119,49 @@ export function Header() {
     description: string;
     icon: React.ReactNode;
   }[] = [
-      {
-        title: "Healthcare",
-        href: "/industries/healthcare",
-        description: "Reliable connectivity for critical medical communications.",
-        icon: <Hospital className="h-5 w-5 text-[#246598]" />,
-      },
-      {
-        title: "Corporate & Enterprise",
-        href: "/industries/corporate",
-        description: "Seamless coverage for modern offices and campuses.",
-        icon: <Building className="h-5 w-5 text-[#8fc447]" />,
-      },
-      {
-        title: "Airports & Transportation",
-        href: "/industries/transportation",
-        description: "Massive capacity networks for travelers and staff.",
-        icon: <Plane className="h-5 w-5 text-[#246598]" />,
-      },
-      {
-        title: "Retail & Malls",
-        href: "/industries/retail",
-        description: "Enhancing shopper experience and store operations.",
-        icon: <ShoppingBag className="h-5 w-5 text-[#8fc447]" />,
-      },
-      {
-        title: "Logistics & Warehousing",
-        href: "/industries/logistics",
-        description: "Connecting automated systems and workforce devices.",
-        icon: <Warehouse className="h-5 w-5 text-[#8fc447]" />,
-      },
-      {
-        href: "/industries/education",
-        title: "Education",
-        description: "High-density Wi-Fi for modern learning environments.",
-        icon: <School className="h-5 w-5 text-[#246598]" />,
-      },
-      {
-        href: "/industries/hospitality",
-        title: "Hospitality",
-        description: "Exceptional guest connectivity and hotel operations.",
-        icon: <Hotel className="h-5 w-5 text-[#8fc447]" />,
-      },
-    ];
+    {
+      title: "Healthcare",
+      href: "/industries/healthcare",
+      description: "Reliable connectivity for critical medical communications.",
+      icon: <Hospital className="h-5 w-5 text-[#246598]" />,
+    },
+    {
+      title: "Corporate & Enterprise",
+      href: "/industries/corporate",
+      description: "Seamless coverage for modern offices and campuses.",
+      icon: <Building className="h-5 w-5 text-[#8fc447]" />,
+    },
+    {
+      title: "Airports & Transportation",
+      href: "/industries/transportation",
+      description: "Massive capacity networks for travelers and staff.",
+      icon: <Plane className="h-5 w-5 text-[#246598]" />,
+    },
+    {
+      title: "Retail & Malls",
+      href: "/industries/retail",
+      description: "Enhancing shopper experience and store operations.",
+      icon: <ShoppingBag className="h-5 w-5 text-[#8fc447]" />,
+    },
+    {
+      title: "Logistics & Warehousing",
+      href: "/industries/logistics",
+      description: "Connecting automated systems and workforce devices.",
+      icon: <Warehouse className="h-5 w-5 text-[#8fc447]" />,
+    },
+    {
+      href: "/industries/education",
+      title: "Education",
+      description: "High-density Wi-Fi for modern learning environments.",
+      icon: <School className="h-5 w-5 text-[#246598]" />,
+    },
+    {
+      href: "/industries/hospitality",
+      title: "Hospitality",
+      description: "Exceptional guest connectivity and hotel operations.",
+      icon: <Hotel className="h-5 w-5 text-[#8fc447]" />,
+    },
+  ];
 
   const otherLinks = [
     { href: "/pricing", label: "Pricing" },
@@ -172,13 +171,15 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg ${isScrolled ? "shadow-lg" : ""
-        }`}
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg ${
+        isScrolled ? "shadow-lg" : ""
+      }`}
     >
       {/* Top Bar */}
       <div
-        className={`bg-[#8fc447] border-b border-green-600/50 transition-all duration-300 ${isScrolled ? "h-0 overflow-hidden" : "h-10"
-          }`}
+        className={`bg-[#8fc447] border-b border-green-600/50 transition-all duration-300 ${
+          isScrolled ? "h-0 overflow-hidden" : "h-10"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-xs text-white">
           <div className="flex items-center gap-4">
@@ -227,62 +228,73 @@ export function Header() {
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] lg:w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
-                <div className="grid grid-cols-2 gap-0">
-                  {/* Left side: Links */}
-                  <div className="p-6">
-                    <div className="space-y-3">
+                <div className="grid grid-cols-12 gap-0">
+                  {/* Left side: Links grid */}
+                  <div className="col-span-8 p-6">
+                    <ul className="grid grid-cols-2 gap-3">
                       {solutions.map((solution) => {
                         const Icon = solution.icon;
                         return (
-                          <Link
-                            onMouseEnter={() => setHoveredSolution(solution)}
-                            key={solution.label}
-                            href={solution.href}
-                            className="group relative flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-[#246598]/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                          >
-                            {/* Gradient Accent */}
-                            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#246598]/5 to-[#8fc447]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <li key={solution.label}>
+                            <Link
+                              onMouseEnter={() => setHoveredSolution(solution)}
+                              href={solution.href}
+                              className="group relative flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-[#246598]/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                            >
+                              {/* Gradient Accent */}
+                              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#246598]/5 to-[#8fc447]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                            {/* Icon Container */}
-                            <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-lg bg-white border border-gray-200 group-hover:border-[#246598] group-hover:bg-[#246598]/5 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <Icon className="w-6 h-6 text-[#246598] transition-colors duration-300" />
-                            </div>
+                              {/* Icon Container */}
+                              <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-lg bg-white border border-gray-200 group-hover:border-[#246598] group-hover:bg-[#246598]/5 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                <Icon className="w-6 h-6 text-[#246598] transition-colors duration-300" />
+                              </div>
 
-                            {/* Content */}
-                            <div className="relative z-10 flex-grow min-w-0">
-                              <h4 className="font-bold text-gray-900 text-base mb-1.5 group-hover:text-[#246598] transition-colors duration-300">
-                                {solution.label}
-                              </h4>
-                              <p className="text-sm text-gray-600 line-clamp-2 leading-snug group-hover:text-gray-700 transition-colors duration-300">
-                                {solution.description}
-                              </p>
-                            </div>
+                              {/* Content */}
+                              <div className="relative z-10 flex-grow min-w-0">
+                                <h4 className="font-bold text-gray-900 text-base mb-1.5 group-hover:text-[#246598] transition-colors duration-300">
+                                  {solution.label.includes("(DAS)") ? (
+                                    <>
+                                      {solution.label.replace(" (DAS)", "")}{" "}
+                                      <span className="text-xs align-baseline">
+                                        (DAS)
+                                      </span>
+                                    </>
+                                  ) : (
+                                    solution.label
+                                  )}
+                                </h4>
+                                <p className="text-sm text-gray-600 line-clamp-2 leading-snug group-hover:text-gray-700 transition-colors duration-300">
+                                  {solution.description}
+                                </p>
+                              </div>
 
-                            {/* Arrow Indicator */}
-                            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <svg
-                                className="w-5 h-5 text-[#246598]"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </div>
-                          </Link>
+                              {/* Arrow Indicator */}
+                              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg
+                                  className="w-5 h-5 text-[#246598]"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
+                            </Link>
+                          </li>
                         );
                       })}
-                    </div>
+                    </ul>
                   </div>
+
                   {/* Right side: Image/Featured */}
                   {hoveredSolution && (
-                    <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-r-2xl p-8 flex flex-col justify-center transition-opacity duration-300 border-l border-gray-200">
-                      <div className="relative group/image mb-6">
+                    <div className="col-span-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-r-2xl p-5 flex flex-col justify-center transition-opacity duration-300 border-l border-gray-200">
+                      <div className="relative group/image mb-4">
                         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#246598]/10 to-[#8fc447]/10 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
                         <Image
                           src={hoveredSolution.image}
@@ -292,31 +304,12 @@ export function Header() {
                           className="relative rounded-xl object-cover shadow-lg group-hover/image:shadow-xl transition-all duration-300 group-hover/image:scale-105"
                         />
                       </div>
-                      <h4 className="font-bold text-gray-900 text-xl mb-3">
+                      <h4 className="font-bold text-gray-900 text-xl mb-2">
                         {hoveredSolution.label}
                       </h4>
-                      <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                      <p className="text-base text-gray-600 mb-0 leading-relaxed">
                         {hoveredSolution.description}
                       </p>
-                      <Link
-                        href={hoveredSolution.href}
-                        className="inline-flex items-center gap-2 text-base font-semibold text-[#246598] hover:text-[#1a4a70] transition-colors duration-300 group/link"
-                      >
-                        Learn More
-                        <svg
-                          className="w-5 h-5 group-hover/link:translate-x-1 transition-transform duration-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </Link>
                     </div>
                   )}
                 </div>
@@ -486,8 +479,9 @@ export function Header() {
               >
                 <span>Solutions</span>
                 <span
-                  className={`transition-transform ${isSolutionsOpen ? "rotate-180" : ""
-                    }`}
+                  className={`transition-transform ${
+                    isSolutionsOpen ? "rotate-180" : ""
+                  }`}
                 >
                   ▼
                 </span>
@@ -516,8 +510,9 @@ export function Header() {
               >
                 <span>Industries</span>
                 <span
-                  className={`transition-transform ${isIndustriesOpen ? "rotate-180" : ""
-                    }`}
+                  className={`transition-transform ${
+                    isIndustriesOpen ? "rotate-180" : ""
+                  }`}
                 >
                   ▼
                 </span>
@@ -603,5 +598,5 @@ const ListItem = React.forwardRef<
       </NavigationMenuLink>
     </li>
   );
-});
+}); 
 ListItem.displayName = "ListItem";
