@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 export function CaseStudyFeatured() {
   return (
@@ -47,12 +48,12 @@ export function CaseStudyFeatured() {
               </div>
             </div>
 
-            <a
+            <Link
               href="/case-studies"
               className="inline-flex items-center gap-2 text-[#246598] font-semibold hover:gap-3 transition-all"
             >
               View All Case Studies <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

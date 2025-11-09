@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 export function IndustriesSection() {
   const [activeIndustry, setActiveIndustry] = useState("stadiums")
@@ -58,6 +59,20 @@ export function IndustriesSection() {
   }
 
   const industryKeys = Object.keys(industries) as Array<keyof typeof industries>
+
+  // Map section keys to page slugs
+  const getIndustrySlug = (key: string): string => {
+    const slugMap: { [key: string]: string } = {
+      stadiums: "corporate", // Stadiums maps to corporate for now
+      hotels: "hospitality",
+      healthcare: "healthcare",
+      airports: "transportation",
+      education: "education",
+      retail: "retail",
+      logistics: "logistics",
+    }
+    return slugMap[key] || "corporate"
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -118,9 +133,11 @@ export function IndustriesSection() {
               </div>
 
               {/* CTA */}
-              <button className="w-full mt-4 bg-[#246598] hover:bg-[#1a4a70] text-white font-semibold py-2 rounded-lg transition-all duration-300 text-sm">
-                Learn More
-              </button>
+              <Link href={`/industries/${getIndustrySlug(activeIndustry)}`}>
+                <button className="w-full mt-4 bg-[#246598] hover:bg-[#1a4a70] text-white font-semibold py-2 rounded-lg transition-all duration-300 text-sm">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

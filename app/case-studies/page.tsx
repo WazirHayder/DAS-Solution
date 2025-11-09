@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 const caseStudies = [
   {
@@ -13,7 +14,7 @@ const caseStudies = [
     challenge: "Poor cellular coverage in guest rooms affecting guest satisfaction",
     solution: "Deployed DAS system across 15 properties",
     results: ["95% guest satisfaction improvement", "40% increase in data usage", "99.99% uptime achieved"],
-    image: "Hotel",
+    image: "/case-study-hotel-chain.jpg",
   },
   {
     id: "hospital",
@@ -22,7 +23,7 @@ const caseStudies = [
     challenge: "Need for secure, low-latency network for medical devices",
     solution: "Implemented private 5G network with security protocols",
     results: ["<10ms latency achieved", "HIPAA compliance maintained", "500+ connected medical devices"],
-    image: "Hospital",
+    image: "/industry-healthcare.jpg",
   },
   {
     id: "airport",
@@ -31,7 +32,7 @@ const caseStudies = [
     challenge: "Support 50,000+ concurrent users with seamless roaming",
     solution: "Deployed Wi-Fi 6E network across terminals",
     results: ["1Gbps+ throughput", "99.95% availability", "Seamless roaming across 8 terminals"],
-    image: "Airport",
+    image: "/industry-airports.jpg",
   },
 ]
 
@@ -54,11 +55,14 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((study) => (
                 <Card key={study.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-[#246598] opacity-20 mb-2">{study.image}</div>
-                      <p className="text-gray-600 font-semibold">{study.image}</p>
-                    </div>
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
                   <div className="p-6">
                     <div className="inline-block bg-blue-100 text-[#246598] px-3 py-1 rounded-full text-xs font-semibold mb-3">

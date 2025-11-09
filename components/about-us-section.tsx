@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 export function AboutUsSection() {
   return (
@@ -68,9 +69,11 @@ export function AboutUsSection() {
               </div>
             </div>
 
-            <button className="mt-8 px-8 py-3 bg-[#8fc447] text-white rounded-lg font-semibold hover:bg-[#79a93b] transition-colors duration-300">
-              Learn More About Us
-            </button>
+            <Link href="/about">
+              <button className="mt-8 px-8 py-3 bg-[#8fc447] text-white rounded-lg font-semibold hover:bg-[#79a93b] transition-colors duration-300">
+                Learn More About Us
+              </button>
+            </Link>
           </div>
         </div>
       </div>

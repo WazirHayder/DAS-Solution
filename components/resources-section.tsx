@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 export function ResourcesSection() {
   const resources = [
@@ -61,6 +62,15 @@ export function ResourcesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <Link href="/resources">
+            <button className="px-8 py-3 bg-[#246598] text-white rounded-lg font-semibold hover:bg-[#1a4a70] transition-colors duration-300">
+              View All Resources & Insights
+            </button>
+          </Link>
         </div>
       </div>
     </section>
