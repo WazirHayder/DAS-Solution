@@ -29,6 +29,7 @@ import {
   Users, // Using a better, existing icon for consulting/partnership
 } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Assuming you have a button component
+import Link from "next/link";
 import React from "react";
 
 const solutionData: {
@@ -200,8 +201,9 @@ const solutionData: {
                 variant="default"
                 size="lg"
                 className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8"
+                asChild
               >
-                Get a Free Consultation
+                <Link href="/contact">Get a Free Consultation</Link>
               </Button>
             </div>
           </div>
@@ -325,8 +327,9 @@ const solutionData: {
                 variant="default"
                 size="lg"
                 className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8"
+                asChild
               >
-                Get a Free Consultation
+                <Link href="/contact">Get a Free Consultation</Link>
               </Button>
             </div>
           </div>
@@ -445,8 +448,8 @@ const solutionData: {
               <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
                 Stop dealing with slow, unreliable Wi-Fi. Contact our specialists for a free assessment of your current network and discover the power of enterprise-grade wireless.
               </p>
-              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8">
-                Request a Wi-Fi Assessment
+              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8" asChild>
+                <Link href="/contact">Request a Wi-Fi Assessment</Link>
               </Button>
             </div>
           </div>
@@ -518,7 +521,7 @@ const solutionData: {
               <PhoneCall className="mx-auto w-16 h-16 mb-6" />
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready to Secure Your Smart Facility?</h2>
               <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">Ensure your security systems have the reliable network they need to perform. Contact us for a comprehensive security network assessment.</p>
-              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8">Get a Security Consultation</Button>
+              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8" asChild><Link href="/contact">Get a Security Consultation</Link></Button>
             </div>
           </div>
         </section>
@@ -589,7 +592,7 @@ const solutionData: {
               <PhoneCall className="mx-auto w-16 h-16 mb-6" />
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready to Maximize Your Network's Potential?</h2>
               <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">Don't settle for subpar wireless performance. Contact our RF experts for a detailed network audit and optimization plan.</p>
-              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8">Request an RF Audit</Button>
+              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8" asChild><Link href="/contact">Request an RF Audit</Link></Button>
             </div>
           </div>
         </section>
@@ -661,7 +664,7 @@ const solutionData: {
               <PhoneCall className="mx-auto w-16 h-16 mb-6" />
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Looking for a Long-Term Wireless Partner?</h2>
               <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">Let us handle the complexities of your wireless infrastructure so you can focus on what you do best. Contact us to learn more about our consulting services and AMCs.</p>
-              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8">Discuss a Partnership</Button>
+              <Button variant="default" size="lg" className="bg-white text-[#246598] hover:bg-gray-100 text-lg font-bold py-3 px-8" asChild><Link href="/contact">Discuss a Partnership</Link></Button>
             </div>
           </div>
         </section>

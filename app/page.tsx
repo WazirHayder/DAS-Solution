@@ -13,8 +13,9 @@ import { CTASection } from "@/components/cta-section"
 import { FAQSection } from "@/components/faq-section"
 import { AboutUsSection } from "@/components/about-us-section"
 import { PricingSection } from "@/components/pricing-section"
-import { GetInTouchSection } from "@/components/get-in-touch-section"
+import { ContactForm } from "@/components/contact-form"
 import { PartnersSection } from "@/components/partners-section"
+import { Phone, Mail, Clock } from "lucide-react"
 
 export default function Home() {
   return (
@@ -61,7 +62,54 @@ export default function Home() {
           <FAQSection />
         </div>
         <div className="bg-white">
-          <GetInTouchSection />
+          <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-3 gap-10 items-start">
+                <div className="lg:col-span-1">
+                  <h2 className="text-4xl font-bold text-gray-900">Get in Touch</h2>
+                  <p className="mt-4 text-gray-600">
+                    Tell us about your site or project. Our specialists will get back within 2 business hours.
+                  </p>
+                  <div className="mt-8 space-y-4">
+                    <div className="flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+                      <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Phone size={22} className="text-[#246598]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Talk to an expert</p>
+                        <a href="tel:+1234567890" className="text-gray-600 hover:text-[#246598] transition-colors">
+                          +1 (234) 567-890
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+                      <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Mail size={22} className="text-[#246598]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Email us anytime</p>
+                        <a href="mailto:info@dassolution.com" className="text-gray-600 hover:text-[#246598] transition-colors">
+                          info@dassolution.com
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+                      <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Clock size={22} className="text-[#246598]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Fast response</p>
+                        <p className="text-gray-600">Typically within 2 business hours</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:col-span-2">
+                  <ContactForm />
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         <div className="bg-gradient-to-r from-[#246598] to-[#1a4a70]">
           <CTASection />
