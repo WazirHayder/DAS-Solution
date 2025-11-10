@@ -714,7 +714,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <Button
                 asChild
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 bg-transparent"
+                className="border border-white text-white hover:bg-[#8fc447] hover:text-[#1a4a70] hover:border-transparent bg-transparent"
               >
                 <a href={solution.pdfPath} download className="flex items-center gap-2">
                   <Download className="w-5 h-5" />
