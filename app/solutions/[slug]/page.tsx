@@ -25,10 +25,10 @@ import {
   School,
   Hotel,
   Radio,
-  // Consulting, // This icon does not exist, causing the error.
-  Users, // Using a better, existing icon for consulting/partnership
+  Users,
+  Download,
 } from "lucide-react";
-import { Button } from "@/components/ui/button"; // Assuming you have a button component
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
@@ -37,11 +37,13 @@ const solutionData: {
     title: string;
     description: string;
     content: string | React.ReactNode;
+    pdfPath: string;
   };
 } = {
   "in-building-coverage": {
     title: "In-Building Coverage (DAS)",
     description: "Seamless indoor cellular coverage for large venues.",
+    pdfPath: "/downloads/in-building-coverage.pdf",
     content: (
       <>
         {/* Section 1: What is DAS? */}
@@ -214,6 +216,7 @@ const solutionData: {
   "private-5g": {
     title: "Private 4G/5G Networks",
     description: "Secure, dedicated networks for critical operations.",
+    pdfPath: "/downloads/private-5g.pdf",
     content:
       <>
         {/* Section 1: What is a Private Network? */}
@@ -339,6 +342,7 @@ const solutionData: {
   "enterprise-wifi": {
     title: "Enterprise Wi-Fi Design",
     description: "High-performance Wi-Fi 6/6E for modern workplaces.",
+    pdfPath: "/downloads/enterprise-wifi.pdf",
     content:
       <>
         {/* Section 1: What is Enterprise Wi-Fi? */}
@@ -459,6 +463,7 @@ const solutionData: {
   "cctv-iot": {
     title: "CCTV, IoT & Security",
     description: "Integrated solutions for smart and secure facilities.",
+    pdfPath: "/downloads/cctv-iot.pdf",
     content:
       <>
         {/* Section 1: Intro */}
@@ -530,6 +535,7 @@ const solutionData: {
   "rf-design": {
     title: "RF Design & Optimization",
     description: "Expert analysis to maximize network performance.",
+    pdfPath: "/downloads/rf-design.pdf",
     content: (
       <>
         {/* Section 1: Intro */}
@@ -602,6 +608,7 @@ const solutionData: {
   consulting: {
     title: "Consulting & AMCs",
     description: "Strategic advice and ongoing network maintenance.",
+    pdfPath: "/downloads/consulting-amc.pdf",
     content: (
       <>
         {/* Section 1: Intro */}
@@ -694,6 +701,27 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <p className="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
               {solution.description}
             </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Button
+                asChild
+                className="bg-white text-[#246598] hover:bg-gray-100"
+              >
+                <Link href="/contact" className="flex items-center gap-2">
+                  <PhoneCall className="w-5 h-5" />
+                  Talk to an Expert
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 bg-transparent"
+              >
+                <a href={solution.pdfPath} download className="flex items-center gap-2">
+                  <Download className="w-5 h-5" />
+                  Download Solution PDF
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
