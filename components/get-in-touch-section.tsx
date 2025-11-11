@@ -12,7 +12,9 @@ export function GetInTouchSection() {
     phone: "",
     siteType: "",
     message: "",
+    attachment: null as File | null,
   })
+  const [attachmentPreview, setAttachmentPreview] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -23,7 +25,23 @@ export function GetInTouchSection() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     // Reset form
-    setFormData({ name: "", email: "", company: "", phone: "", siteType: "", message: "" })
+    setFormData({ name: "", email: "", company: "", phone: "", siteType: "", message: "", attachment: null })
+    setAttachmentPreview(null)
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null
+    if (!file) return
+    const allowed = ["application/pdf", "image/png", "image/jpeg", "image/jpg", "image/webp"]
+    if (!allowed.includes(file.type)) return
+    if (file.size > 10 * 1024 * 1024) return
+    setFormData((p) => ({ ...p, attachment: file }))
+    if (file.type.startsWith("image/")) setAttachmentPreview(URL.createObjectURL(file))
+  }
+
+  const removeAttachment = () => {
+    setFormData((p) => ({ ...p, attachment: null }))
+    setAttachmentPreview(null)
   }
 
   return (
@@ -170,6 +188,30 @@ export function GetInTouchSection() {
                   rows={4}                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#8fc447] focus:border-transparent transition-all resize-none"
                   required
                 ></textarea>
+              </div>
+
+              {/* Attachment */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">Attach file (optional)</label>
+                <div className="flex items-center gap-3">
+                  <label className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 text-sm">
+                    <input type="file" accept="image/*,application/pdf" onChange={handleFileChange} className="hidden" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7.414A2 2 0 0016.586 6L13 2.414A2 2 0 0011.586 2H4z" />
+                    </svg>
+                    <span>{formData.attachment ? "Change file" : "Upload file"}</span>
+                  </label>
+
+                  {formData.attachment && (
+                    <div className="text-sm text-gray-700">
+                      <div className="flex items-center gap-2">
+                        <span className="truncate max-w-[220px]">{(formData.attachment as File).name}</span>
+                        <button type="button" onClick={removeAttachment} className="text-xs text-red-600 hover:underline">Remove</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {attachmentPreview && <img src={attachmentPreview} alt="preview" className="mt-3 max-h-36 rounded-lg border" />}
               </div>
 
               {/* Submit Button */}

@@ -213,7 +213,7 @@ export function Header() {
           >
             <Image
               src="/DAS LOGO.png"
-              alt="DASsolution Logo"
+              alt="DAS Solution Logo"
               width={84}
               height={84}
             />

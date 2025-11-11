@@ -10,7 +10,7 @@ export function AboutUsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative h-96 lg:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg">
-            <Image src="/professional-team-working-on-telecom-solutions.jpg" alt="DASsolution team" fill className="object-cover" />
+            <Image src="/professional-team-working-on-telecom-solutions.jpg" alt="DAS Solution team" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#246598]/20 to-transparent"></div>
           </div>
 
@@ -18,7 +18,7 @@ export function AboutUsSection() {
           <div className="space-y-6">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                About <span className="text-[#8fc447]">DASsolution</span>
+                About <span className="text-[#8fc447]">DAS Solution</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We are a leading provider of telecom and IT solutions, specializing in private wireless networks,

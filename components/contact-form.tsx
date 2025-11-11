@@ -17,7 +17,10 @@ export function ContactForm() {
     budget: "",
     website: "",
     siteTypeOther: "",
+    attachment: null as File | null,
   });
+
+  const [attachmentPreview, setAttachmentPreview] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -27,7 +30,10 @@ export function ContactForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value, type } = e.target;
+    const { name, value, type } = e.target as HTMLInputElement & {
+      name: string;
+      value: string;
+    };
     setFormData((prev) => ({
       ...prev,
       [name]:
@@ -42,6 +48,47 @@ export function ContactForm() {
     }
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
+    if (!file) return;
+    const allowed = [
+      "application/pdf",
+      "image/png",
+      "image/jpeg",
+      "image/jpg",
+      "image/webp",
+    ];
+    if (!allowed.includes(file.type)) {
+      setErrors((p) => ({
+        ...p,
+        attachment: "Only PNG/JPG/WEBP images and PDFs are allowed.",
+      }));
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      setErrors((p) => ({ ...p, attachment: "Maximum file size is 10MB." }));
+      return;
+    }
+    setFormData((p) => ({ ...p, attachment: file }));
+    if (file.type.startsWith("image/")) {
+      setAttachmentPreview(URL.createObjectURL(file));
+    } else {
+      setAttachmentPreview(null);
+    }
+    if (errors.attachment) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next.attachment;
+        return next;
+      });
+    }
+  };
+
+  const removeAttachment = () => {
+    setFormData((p) => ({ ...p, attachment: null }));
+    setAttachmentPreview(null);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const nextErrors: Record<string, string> = {};
@@ -49,15 +96,12 @@ export function ContactForm() {
       nextErrors.name = "Please enter your full name.";
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
     if (!emailOk) nextErrors.email = "Please enter a valid email address.";
-    if (!formData.company)
-      nextErrors.company = "Please enter a company or organization.";
-    if (!formData.siteType || formData.siteType.length === 0)
-      nextErrors.siteType = "Select at least one site type.";
+    if (!formData.company) nextErrors.company = "Please enter a company or organization.";
+    if (!formData.siteType || formData.siteType.length === 0) nextErrors.siteType = "Select at least one site type.";
     if (formData.siteType.includes("other") && !formData.siteTypeOther.trim()) {
       nextErrors.siteTypeOther = "Please specify the 'Other' site type.";
     }
-    if (!formData.message || formData.message.trim().length < 20)
-      nextErrors.message = "Message should be at least 20 characters.";
+    if (!formData.message || formData.message.trim().length < 20) nextErrors.message = "Message should be at least 20 characters.";
     if (!formData.privacy) nextErrors.privacy = "You must agree to continue.";
     if (formData.website) nextErrors.website = "Spam detected.";
     if (Object.keys(nextErrors).length > 0) {
@@ -66,6 +110,7 @@ export function ContactForm() {
     }
     setIsSubmitting(true);
     try {
+      // simulate API
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitted(true);
       setTimeout(() => {
@@ -82,7 +127,9 @@ export function ContactForm() {
           budget: "",
           website: "",
           siteTypeOther: "",
+          attachment: null,
         });
+        setAttachmentPreview(null);
         setErrors({});
       }, 2800);
     } finally {
@@ -95,34 +142,18 @@ export function ContactForm() {
       {submitted ? (
         <div className="text-center py-12">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg
-              className="w-8 h-8 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Thanks! We’ve got your message.
-          </h3>
-          <p className="text-gray-600">
-            Our team will get back to you shortly.
-          </p>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Thanks! We’ve got your message.</h3>
+          <p className="text-gray-600">Our team will get back to you shortly.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
-              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">
-                👤
-              </div>
+              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">👤</div>
               <input
                 type="text"
                 id="name"
@@ -135,20 +166,11 @@ export function ContactForm() {
                 }`}
                 placeholder=" "
               />
-              <label
-                htmlFor="name"
-                className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs"
-              >
-                Full Name *
-              </label>
-              {errors.name && (
-                <p className="mt-1 text-xs text-red-600">{errors.name}</p>
-              )}
+              <label htmlFor="name" className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs">Full Name *</label>
+              {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
             </div>
             <div className="relative">
-              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">
-                ✉️
-              </div>
+              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">✉️</div>
               <input
                 type="email"
                 id="email"
@@ -161,23 +183,14 @@ export function ContactForm() {
                 }`}
                 placeholder=" "
               />
-              <label
-                htmlFor="email"
-                className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs"
-              >
-                Email *
-              </label>
-              {errors.email && (
-                <p className="mt-1 text-xs text-red-600">{errors.email}</p>
-              )}
+              <label htmlFor="email" className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs">Email *</label>
+              {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
-              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">
-                🏢
-              </div>
+              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">🏢</div>
               <input
                 type="text"
                 id="company"
@@ -190,20 +203,11 @@ export function ContactForm() {
                 }`}
                 placeholder=" "
               />
-              <label
-                htmlFor="company"
-                className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs"
-              >
-                Company *
-              </label>
-              {errors.company && (
-                <p className="mt-1 text-xs text-red-600">{errors.company}</p>
-              )}
+              <label htmlFor="company" className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs">Company *</label>
+              {errors.company && <p className="mt-1 text-xs text-red-600">{errors.company}</p>}
             </div>
             <div className="relative">
-              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">
-                📞
-              </div>
+              <div className="pointer-events-none absolute left-3 top-3 text-gray-400">📞</div>
               <input
                 type="tel"
                 id="phone"
@@ -213,30 +217,15 @@ export function ContactForm() {
                 className="peer w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598]"
                 placeholder=" "
               />
-              <label
-                htmlFor="phone"
-                className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs"
-              >
-                Phone (optional)
-              </label>
+              <label htmlFor="phone" className="absolute left-10 top-2.5 px-1 bg-white text-gray-500 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2.5 peer-focus:text-xs">Phone (optional)</label>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <p className="block text-sm font-semibold text-gray-900 mb-2">
-                Site Type *
-              </p>
+              <p className="block text-sm font-semibold text-gray-900 mb-2">Site Type *</p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "hotel",
-                  "hospital",
-                  "airport",
-                  "campus",
-                  "retail",
-                  "warehouse",
-                  "other",
-                ].map((opt) => {
+                {["hotel", "hospital", "airport", "campus", "retail", "warehouse", "other"].map((opt) => {
                   const selected = formData.siteType.includes(opt);
                   return (
                     <button
@@ -245,23 +234,16 @@ export function ContactForm() {
                       onClick={() =>
                         setFormData((p) => {
                           const isSelected = p.siteType.includes(opt);
-                          const next = isSelected
-                            ? p.siteType.filter((s) => s !== opt)
-                            : [...p.siteType, opt];
+                          const next = isSelected ? p.siteType.filter((s) => s !== opt) : [...p.siteType, opt];
                           return {
                             ...p,
                             siteType: next,
-                            siteTypeOther:
-                              opt === "other" && isSelected
-                                ? ""
-                                : p.siteTypeOther,
+                            siteTypeOther: opt === "other" && isSelected ? "" : p.siteTypeOther,
                           };
                         })
                       }
                       className={`px-3 py-2 rounded-lg border text-sm ${
-                        selected
-                          ? "bg-[#246598] border-[#246598] text-white"
-                          : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                        selected ? "bg-[#246598] border-[#246598] text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50"
                       }`}
                     >
                       {opt.charAt(0).toUpperCase() + opt.slice(1)}
@@ -271,12 +253,7 @@ export function ContactForm() {
               </div>
               {formData.siteType.includes("other") && (
                 <div className="mt-3">
-                  <label
-                    htmlFor="siteTypeOther"
-                    className="block text-sm text-gray-700 mb-1"
-                  >
-                    Please specify
-                  </label>
+                  <label htmlFor="siteTypeOther" className="block text-sm text-gray-700 mb-1">Please specify</label>
                   <input
                     id="siteTypeOther"
                     name="siteTypeOther"
@@ -284,38 +261,20 @@ export function ContactForm() {
                     value={formData.siteTypeOther}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598] ${
-                      errors.siteTypeOther
-                        ? "border-red-400"
-                        : "border-gray-300"
+                      errors.siteTypeOther ? "border-red-400" : "border-gray-300"
                     }`}
                     placeholder="e.g., Stadium, Convention Center, Mines, etc."
                   />
-                  {errors.siteTypeOther && (
-                    <p className="mt-1 text-xs text-red-600">
-                      {errors.siteTypeOther}
-                    </p>
-                  )}
+                  {errors.siteTypeOther && <p className="mt-1 text-xs text-red-600">{errors.siteTypeOther}</p>}
                 </div>
               )}
-              {errors.siteType && (
-                <p className="mt-1 text-xs text-red-600">{errors.siteType}</p>
-              )}
+              {errors.siteType && <p className="mt-1 text-xs text-red-600">{errors.siteType}</p>}
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label
-                  htmlFor="timeline"
-                  className="block text-sm font-semibold text-gray-900 mb-2"
-                >
-                  Project Timeline
-                </label>
-                <select
-                  id="timeline"
-                  name="timeline"
-                  value={formData.timeline}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598]"
-                >
+                <label htmlFor="timeline" className="block text-sm font-semibold text-gray-900 mb-2">Project Timeline</label>
+                <select id="timeline" name="timeline" value={formData.timeline} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598]">
                   <option value="">Select timeline</option>
                   <option value="asap">ASAP</option>
                   <option value="1-3-months">1–3 months</option>
@@ -324,19 +283,8 @@ export function ContactForm() {
                 </select>
               </div>
               <div>
-                <label
-                  htmlFor="budget"
-                  className="block text-sm font-semibold text-gray-900 mb-2"
-                >
-                  Estimated Budget
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598]"
-                >
+                <label htmlFor="budget" className="block text-sm font-semibold text-gray-900 mb-2">Estimated Budget</label>
+                <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598]">
                   <option value="">Select budget</option>
                   <option value="under-25k">Under $25k</option>
                   <option value="25k-100k">$25k–$100k</option>
@@ -349,70 +297,52 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-semibold text-gray-900 mb-2"
-            >
-              Message *
-            </label>
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">Message *</label>
             <div className="relative">
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                maxLength={1000}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598] ${
-                  errors.message ? "border-red-400" : "border-gray-300"
-                }`}
-                placeholder="Tell us about your project, goals, site size, or any constraints..."
-              />
-              <div className="absolute bottom-2 right-3 text-xs text-gray-400">
-                {formData.message.length}/1000
-              </div>
+              <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} maxLength={1000} className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#246598] ${errors.message ? "border-red-400" : "border-gray-300"}`} placeholder="Tell us about your project, goals, site size, or any constraints..." />
+              <div className="absolute bottom-2 right-3 text-xs text-gray-400">{formData.message.length}/1000</div>
             </div>
-            {errors.message && (
-              <p className="mt-1 text-xs text-red-600">{errors.message}</p>
-            )}
+            {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+          </div>
+
+          {/* Attachment */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-900 mb-2">Attach file (photo or PDF)</label>
+            <div className="flex items-center gap-3">
+              <label className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 text-sm">
+                <input type="file" accept="image/*,application/pdf" onChange={handleFileChange} className="hidden" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7.414A2 2 0 0016.586 6L13 2.414A2 2 0 0011.586 2H4z" />
+                </svg>
+                <span>{formData.attachment ? "Change file" : "Upload file"}</span>
+              </label>
+
+              {formData.attachment && (
+                <div className="text-sm text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <span className="truncate max-w-[220px]">{formData.attachment.name}</span>
+                    <button type="button" onClick={removeAttachment} className="text-xs text-red-600 hover:underline">Remove</button>
+                  </div>
+                </div>
+              )}
+            </div>
+            {attachmentPreview && <img src={attachmentPreview} alt="preview" className="mt-3 max-h-36 rounded-lg border" />}
+            {errors.attachment && <p className="mt-1 text-xs text-red-600">{errors.attachment}</p>}
           </div>
 
           {/* Honeypot */}
           <div className="hidden">
             <label htmlFor="website">Website</label>
-            <input
-              id="website"
-              name="website"
-              value={formData.website}
-              onChange={handleChange}
-            />
-            {errors.website && (
-              <p className="text-xs text-red-600">{errors.website}</p>
-            )}
+            <input id="website" name="website" value={formData.website} onChange={handleChange} />
+            {errors.website && <p className="text-xs text-red-600">{errors.website}</p>}
           </div>
 
           <div className="flex items-start gap-3">
-            <input
-              type="checkbox"
-              id="privacy"
-              name="privacy"
-              checked={formData.privacy}
-              onChange={handleChange}
-              required
-              className="mt-1"
-            />
-            <label htmlFor="privacy" className="text-sm text-gray-600">
-              I agree to the privacy policy and terms of service *
-            </label>
+            <input type="checkbox" id="privacy" name="privacy" checked={formData.privacy} onChange={handleChange} required className="mt-1" />
+            <label htmlFor="privacy" className="text-sm text-gray-600">I agree to the privacy policy and terms of service *</label>
           </div>
 
-          <Button
-            type="submit"
-            size="lg"
-            className="w-full bg-[#246598] hover:bg-[#1a4a70] text-white disabled:opacity-70 disabled:cursor-not-allowed"
-            disabled={isSubmitting}
-          >
+          <Button type="submit" size="lg" className="w-full bg-[#246598] hover:bg-[#1a4a70] text-white disabled:opacity-70 disabled:cursor-not-allowed" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>

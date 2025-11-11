@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/DAS LOGO.png"
-                alt="DASsolution Logo"
+                alt="DAS Solution Logo"
                 width={98}
                 height={98}
               />
@@ -123,7 +123,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400">&copy; 2025 DASsolution. All rights reserved.</p>
+          <p className="text-sm text-gray-400">&copy; 2025 DAS Solution. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="text-gray-400 hover:text-[#246598] transition-colors">
               <LinkedinIcon />

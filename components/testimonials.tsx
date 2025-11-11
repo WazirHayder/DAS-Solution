@@ -8,7 +8,7 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "DASsolution transformed our in-building coverage. The deployment was seamless and the support team is exceptional.",
+      "DAS Solution transformed our in-building coverage. The deployment was seamless and the support team is exceptional.",
     author: "Sarah Johnson",
     role: "VP of Operations, Tech Corp",
     rating: 5,
