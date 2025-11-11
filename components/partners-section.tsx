@@ -24,13 +24,13 @@ const partners = [
     image: "/Eino.jpg",
   },
   {
-    name: "Ekahow",
-    slug: "ekahow",
+    name: "Ekahau",
+    slug: "ekahau",
     description: "Enterprise wireless network management and orchestration platform",
     features: ["Network management", "Automation", "Integration"],
     icon: "⚙️",
     gradient: "from-[#246598]/50 to-cyan-400/50",
-    image: "/Ekahow.png",
+    image: "/Ekahau.png",
   },
 ]
 

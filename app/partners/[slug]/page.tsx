@@ -44,7 +44,11 @@ const partnerData: {
     icon: React.ReactNode;
     primaryColor: string;
     secondaryColor: string;
-    capabilities: { title: string; description: string; icon: React.ReactNode }[];
+    capabilities: {
+      title: string;
+      description: string;
+      icon: React.ReactNode;
+    }[];
     benefits: { title: string; description: string }[];
     useCases: string[];
     stats: { value: string; label: string }[];
@@ -56,7 +60,8 @@ const partnerData: {
   ibwave: {
     name: "iBwave",
     tagline: "Design Excellence. Deploy with Confidence.",
-    description: "Leading DAS and small cell design and deployment software platform",
+    description:
+      "Leading DAS and small cell design and deployment software platform",
     fullDescription:
       "iBwave is the industry-leading platform for designing, planning, and deploying Distributed Antenna Systems (DAS) and small cell networks. Trusted by network operators and system integrators worldwide, iBwave provides comprehensive tools for accurate RF prediction, 3D modeling, and seamless project execution.",
     logo: "/IbWAVE.jpg",
@@ -67,37 +72,44 @@ const partnerData: {
     capabilities: [
       {
         title: "3D Building Modeling",
-        description: "Create accurate 3D models of your facility for precise network planning and visualization.",
+        description:
+          "Create accurate 3D models of your facility for precise network planning and visualization.",
         icon: <Layers className="w-8 h-8" />,
       },
       {
         title: "RF Prediction & Analysis",
-        description: "Advanced algorithms predict coverage, capacity, and interference with industry-leading accuracy.",
+        description:
+          "Advanced algorithms predict coverage, capacity, and interference with industry-leading accuracy.",
         icon: <BarChart className="w-8 h-8" />,
       },
       {
         title: "Automated Design Tools",
-        description: "Intelligent automation reduces design time while ensuring optimal network performance.",
+        description:
+          "Intelligent automation reduces design time while ensuring optimal network performance.",
         icon: <Zap className="w-8 h-8" />,
       },
       {
         title: "Project Management",
-        description: "End-to-end project tracking from initial design through deployment and optimization.",
+        description:
+          "End-to-end project tracking from initial design through deployment and optimization.",
         icon: <Target className="w-8 h-8" />,
       },
     ],
     benefits: [
       {
         title: "Reduce Design Time by 60%",
-        description: "Automated design tools and templates accelerate project timelines dramatically.",
+        description:
+          "Automated design tools and templates accelerate project timelines dramatically.",
       },
       {
         title: "Improve Accuracy by 95%",
-        description: "Advanced RF prediction algorithms minimize design errors and post-deployment issues.",
+        description:
+          "Advanced RF prediction algorithms minimize design errors and post-deployment issues.",
       },
       {
         title: "Lower Deployment Costs",
-        description: "Optimize equipment placement and reduce over-provisioning with precise planning.",
+        description:
+          "Optimize equipment placement and reduce over-provisioning with precise planning.",
       },
     ],
     useCases: [
@@ -147,37 +159,44 @@ const partnerData: {
     capabilities: [
       {
         title: "AI-Powered Analytics",
-        description: "Machine learning algorithms analyze network patterns and predict performance issues before they impact users.",
+        description:
+          "Machine learning algorithms analyze network patterns and predict performance issues before they impact users.",
         icon: <Cpu className="w-8 h-8" />,
       },
       {
         title: "Real-Time Monitoring",
-        description: "Continuous network health monitoring with instant alerts for anomalies and performance degradation.",
+        description:
+          "Continuous network health monitoring with instant alerts for anomalies and performance degradation.",
         icon: <Monitor className="w-8 h-8" />,
       },
       {
         title: "Predictive Optimization",
-        description: "Proactively optimize network parameters based on predictive analytics and traffic forecasting.",
+        description:
+          "Proactively optimize network parameters based on predictive analytics and traffic forecasting.",
         icon: <TrendingUp className="w-8 h-8" />,
       },
       {
         title: "Performance Intelligence",
-        description: "Deep insights into network KPIs, user experience metrics, and optimization opportunities.",
+        description:
+          "Deep insights into network KPIs, user experience metrics, and optimization opportunities.",
         icon: <Database className="w-8 h-8" />,
       },
     ],
     benefits: [
       {
         title: "30% Performance Improvement",
-        description: "Optimized network parameters deliver measurable improvements in throughput and coverage.",
+        description:
+          "Optimized network parameters deliver measurable improvements in throughput and coverage.",
       },
       {
         title: "50% Reduction in OPEX",
-        description: "Automated optimization reduces manual tuning and operational overhead significantly.",
+        description:
+          "Automated optimization reduces manual tuning and operational overhead significantly.",
       },
       {
         title: "Proactive Problem Resolution",
-        description: "Identify and resolve issues before users experience service degradation.",
+        description:
+          "Identify and resolve issues before users experience service degradation.",
       },
     ],
     useCases: [
@@ -213,13 +232,14 @@ const partnerData: {
     ],
     content: <></>,
   },
-  ekahow: {
-    name: "Ekahow",
+  ekahau: {
+    name: "Ekahau",
     tagline: "Orchestrate Networks. Simplify Operations.",
-    description: "Enterprise wireless network management and orchestration platform",
+    description:
+      "Enterprise wireless network management and orchestration platform",
     fullDescription:
-      "Ekahow provides unified network orchestration and management for enterprise wireless infrastructure. Our platform simplifies complex network operations, automates routine tasks, and delivers centralized visibility and control across your entire wireless ecosystem.",
-    logo: "/Ekahow.png",
+      "Ekahau provides unified network orchestration and management for enterprise wireless infrastructure. Our platform simplifies complex network operations, automates routine tasks, and delivers centralized visibility and control across your entire wireless ecosystem.",
+    logo: "/Ekahau.png",
     gradient: "from-blue-500 via-cyan-500 to-indigo-600",
     icon: <Settings className="w-16 h-16" />,
     primaryColor: "blue",
@@ -227,37 +247,44 @@ const partnerData: {
     capabilities: [
       {
         title: "Unified Network Management",
-        description: "Single pane of glass for managing all wireless technologies across your enterprise.",
+        description:
+          "Single pane of glass for managing all wireless technologies across your enterprise.",
         icon: <Network className="w-8 h-8" />,
       },
       {
         title: "Automated Orchestration",
-        description: "Intelligent automation streamlines network provisioning, configuration, and optimization workflows.",
+        description:
+          "Intelligent automation streamlines network provisioning, configuration, and optimization workflows.",
         icon: <Settings className="w-8 h-8" />,
       },
       {
         title: "Multi-Vendor Support",
-        description: "Manage equipment from multiple vendors through unified APIs and standardized interfaces.",
+        description:
+          "Manage equipment from multiple vendors through unified APIs and standardized interfaces.",
         icon: <Globe className="w-8 h-8" />,
       },
       {
         title: "Cloud & On-Premise",
-        description: "Flexible deployment options including cloud, hybrid, and on-premise configurations.",
+        description:
+          "Flexible deployment options including cloud, hybrid, and on-premise configurations.",
         icon: <Cloud className="w-8 h-8" />,
       },
     ],
     benefits: [
       {
         title: "70% Faster Deployment",
-        description: "Automated workflows reduce deployment time from weeks to days.",
+        description:
+          "Automated workflows reduce deployment time from weeks to days.",
       },
       {
         title: "Unified Operations",
-        description: "Centralized management eliminates the complexity of multiple vendor tools.",
+        description:
+          "Centralized management eliminates the complexity of multiple vendor tools.",
       },
       {
         title: "Scalable Architecture",
-        description: "Scale from small deployments to enterprise-wide networks seamlessly.",
+        description:
+          "Scale from small deployments to enterprise-wide networks seamlessly.",
       },
     ],
     useCases: [
@@ -295,43 +322,57 @@ const partnerData: {
   },
 };
 
-export default async function PartnerPage({ params }: { params: Promise<{ slug: string }> }) {
+partnerData.ekahow = partnerData.ekahau;
+
+export default async function PartnerPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const partner = partnerData[slug];
   if (!partner) {
     notFound();
   }
 
-  const gradientColors = {
+  const gradientColors: Record<string, string> = {
     ibwave: "from-red-600 via-red-500 to-red-700",
     eino: "from-green-500 via-emerald-500 to-teal-600",
-    ekahow: "from-blue-500 via-cyan-500 to-indigo-600",
+    ekahau: "from-blue-500 via-cyan-500 to-indigo-600",
   };
+  gradientColors.ekahow = gradientColors.ekahau;
 
-  const borderColors = {
+  const borderColors: Record<string, string> = {
     ibwave: "border-red-500",
     eino: "border-green-500",
-    ekahow: "border-blue-500",
+    ekahau: "border-blue-500",
   };
+  borderColors.ekahow = borderColors.ekahau;
 
-  const bgColors = {
+  const bgColors: Record<string, string> = {
     ibwave: "bg-red-50",
     eino: "bg-green-50",
-    ekahow: "bg-blue-50",
+    ekahau: "bg-blue-50",
   };
+  bgColors.ekahow = bgColors.ekahau;
 
-  const textColors = {
+  const textColors: Record<string, string> = {
     ibwave: "text-red-600",
     eino: "text-green-600",
-    ekahow: "text-blue-600",
+    ekahau: "text-blue-600",
   };
+  textColors.ekahow = textColors.ekahau;
 
   return (
     <div className="bg-white">
       <Header />
       <main>
         {/* Hero Section - Unique Design */}
-        <section className={`relative py-24 md:py-32 overflow-hidden bg-gradient-to-br ${gradientColors[slug as keyof typeof gradientColors]} text-white`}>
+        <section
+          className={`relative py-24 md:py-32 overflow-hidden bg-gradient-to-br ${
+            gradientColors[slug as keyof typeof gradientColors]
+          } text-white`}
+        >
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -379,15 +420,25 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
               {partner.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`relative p-6 rounded-2xl bg-white shadow-xl border-2 ${borderColors[slug as keyof typeof borderColors]} hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 transform`}
+                  className={`relative p-6 rounded-2xl bg-white shadow-xl border-2 ${
+                    borderColors[slug as keyof typeof borderColors]
+                  } hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 transform`}
                 >
-                  <div className={`text-5xl font-extrabold ${textColors[slug as keyof typeof textColors]} mb-2`}>
+                  <div
+                    className={`text-5xl font-extrabold ${
+                      textColors[slug as keyof typeof textColors]
+                    } mb-2`}
+                  >
                     {stat.value}
                   </div>
                   <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                     {stat.label}
                   </div>
-                  <div className={`absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br ${gradientColors[slug as keyof typeof gradientColors]} flex items-center justify-center text-white text-xl font-bold shadow-lg`}>
+                  <div
+                    className={`absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br ${
+                      gradientColors[slug as keyof typeof gradientColors]
+                    } flex items-center justify-center text-white text-xl font-bold shadow-lg`}
+                  >
                     {index + 1}
                   </div>
                 </div>
@@ -404,7 +455,8 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                 Platform Capabilities
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive tools and features designed for enterprise-grade network operations
+                Comprehensive tools and features designed for enterprise-grade
+                network operations
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -412,21 +464,39 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                 <div
                   key={index}
                   className={`group relative p-6 rounded-2xl bg-white border-2 border-gray-200 ${
-                    slug === "ibwave" ? "hover:border-red-500" : slug === "eino" ? "hover:border-green-500" : "hover:border-blue-500"
+                    slug === "ibwave"
+                      ? "hover:border-red-500"
+                      : slug === "eino"
+                      ? "hover:border-green-500"
+                      : "hover:border-blue-500"
                   } transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
                 >
-                  <div className={`mb-4 ${
-                    slug === "ibwave" ? "text-red-600" : slug === "eino" ? "text-green-600" : "text-blue-600"
-                  }`}>
+                  <div
+                    className={`mb-4 ${
+                      slug === "ibwave"
+                        ? "text-red-600"
+                        : slug === "eino"
+                        ? "text-green-600"
+                        : "text-blue-600"
+                    }`}
+                  >
                     {capability.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{capability.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{capability.description}</p>
-                  <div className={`absolute inset-0 rounded-2xl ${
-                    slug === "ibwave" ? "bg-gradient-to-br from-red-600 via-red-500 to-red-700" : 
-                    slug === "eino" ? "bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600" : 
-                    "bg-gradient-to-br from-blue-500 via-cyan-500 to-indigo-600"
-                  } opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {capability.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {capability.description}
+                  </p>
+                  <div
+                    className={`absolute inset-0 rounded-2xl ${
+                      slug === "ibwave"
+                        ? "bg-gradient-to-br from-red-600 via-red-500 to-red-700"
+                        : slug === "eino"
+                        ? "bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600"
+                        : "bg-gradient-to-br from-blue-500 via-cyan-500 to-indigo-600"
+                    } opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                  ></div>
                 </div>
               ))}
             </div>
@@ -441,26 +511,40 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                 <div
                   key={index}
                   className={`relative p-8 rounded-2xl ${
-                    slug === "ibwave" ? "bg-red-50 border-l-4 border-red-500" : 
-                    slug === "eino" ? "bg-green-50 border-l-4 border-green-500" : 
-                    "bg-blue-50 border-l-4 border-blue-500"
+                    slug === "ibwave"
+                      ? "bg-red-50 border-l-4 border-red-500"
+                      : slug === "eino"
+                      ? "bg-green-50 border-l-4 border-green-500"
+                      : "bg-blue-50 border-l-4 border-blue-500"
                   } hover:shadow-xl transition-all duration-300`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-full ${
-                      slug === "ibwave" ? "bg-gradient-to-br from-red-600 via-red-500 to-red-700" : 
-                      slug === "eino" ? "bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600" : 
-                      "bg-gradient-to-br from-blue-500 via-cyan-500 to-indigo-600"
-                    } text-white flex items-center justify-center text-2xl font-bold shadow-lg`}>
+                    <div
+                      className={`flex-shrink-0 w-16 h-16 rounded-full ${
+                        slug === "ibwave"
+                          ? "bg-gradient-to-br from-red-600 via-red-500 to-red-700"
+                          : slug === "eino"
+                          ? "bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600"
+                          : "bg-gradient-to-br from-blue-500 via-cyan-500 to-indigo-600"
+                      } text-white flex items-center justify-center text-2xl font-bold shadow-lg`}
+                    >
                       {index + 1}
                     </div>
                     <div className="flex-grow">
-                      <h3 className={`text-2xl font-bold ${
-                        slug === "ibwave" ? "text-red-600" : slug === "eino" ? "text-green-600" : "text-blue-600"
-                      } mb-3`}>
+                      <h3
+                        className={`text-2xl font-bold ${
+                          slug === "ibwave"
+                            ? "text-red-600"
+                            : slug === "eino"
+                            ? "text-green-600"
+                            : "text-blue-600"
+                        } mb-3`}
+                      >
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">{benefit.description}</p>
+                      <p className="text-gray-700 leading-relaxed">
+                        {benefit.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -476,10 +560,18 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
               {/* Use Cases */}
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className={`w-12 h-1 ${
-                    slug === "ibwave" ? "bg-red-50" : slug === "eino" ? "bg-green-50" : "bg-blue-50"
-                  } rounded-full`}></div>
-                  <h2 className="text-3xl font-bold text-gray-900">Use Cases</h2>
+                  <div
+                    className={`w-12 h-1 ${
+                      slug === "ibwave"
+                        ? "bg-red-50"
+                        : slug === "eino"
+                        ? "bg-green-50"
+                        : "bg-blue-50"
+                    } rounded-full`}
+                  ></div>
+                  <h2 className="text-3xl font-bold text-gray-900">
+                    Use Cases
+                  </h2>
                 </div>
                 <div className="grid gap-4">
                   {partner.useCases.map((useCase, index) => (
@@ -487,14 +579,28 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                       key={index}
                       className="flex items-start gap-4 p-4 rounded-xl bg-white border border-gray-200 hover:shadow-md transition-all duration-300 group"
                     >
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${
-                        slug === "ibwave" ? "bg-red-50" : slug === "eino" ? "bg-green-50" : "bg-blue-50"
-                      } flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                        <CheckCircle className={`w-6 h-6 ${
-                          slug === "ibwave" ? "text-red-600" : slug === "eino" ? "text-green-600" : "text-blue-600"
-                        }`} />
+                      <div
+                        className={`flex-shrink-0 w-10 h-10 rounded-lg ${
+                          slug === "ibwave"
+                            ? "bg-red-50"
+                            : slug === "eino"
+                            ? "bg-green-50"
+                            : "bg-blue-50"
+                        } flex items-center justify-center group-hover:scale-110 transition-transform`}
+                      >
+                        <CheckCircle
+                          className={`w-6 h-6 ${
+                            slug === "ibwave"
+                              ? "text-red-600"
+                              : slug === "eino"
+                              ? "text-green-600"
+                              : "text-blue-600"
+                          }`}
+                        />
                       </div>
-                      <p className="text-gray-700 font-medium pt-1.5">{useCase}</p>
+                      <p className="text-gray-700 font-medium pt-1.5">
+                        {useCase}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -503,10 +609,18 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
               {/* Features */}
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className={`w-12 h-1 ${
-                    slug === "ibwave" ? "bg-red-50" : slug === "eino" ? "bg-green-50" : "bg-blue-50"
-                  } rounded-full`}></div>
-                  <h2 className="text-3xl font-bold text-gray-900">Key Features</h2>
+                  <div
+                    className={`w-12 h-1 ${
+                      slug === "ibwave"
+                        ? "bg-red-50"
+                        : slug === "eino"
+                        ? "bg-green-50"
+                        : "bg-blue-50"
+                    } rounded-full`}
+                  ></div>
+                  <h2 className="text-3xl font-bold text-gray-900">
+                    Key Features
+                  </h2>
                 </div>
                 <div className="space-y-3">
                   {partner.features.map((feature, index) => (
@@ -514,9 +628,15 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                       key={index}
                       className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors"
                     >
-                      <Star className={`w-5 h-5 ${
-                        slug === "ibwave" ? "text-red-600" : slug === "eino" ? "text-green-600" : "text-blue-600"
-                      } flex-shrink-0`} />
+                      <Star
+                        className={`w-5 h-5 ${
+                          slug === "ibwave"
+                            ? "text-red-600"
+                            : slug === "eino"
+                            ? "text-green-600"
+                            : "text-blue-600"
+                        } flex-shrink-0`}
+                      />
                       <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
@@ -543,9 +663,15 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
                   key={index}
                   className="p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg text-center"
                 >
-                  <Globe className={`w-8 h-8 ${
-                    slug === "ibwave" ? "text-red-600" : slug === "eino" ? "text-green-600" : "text-blue-600"
-                  } mx-auto mb-3`} />
+                  <Globe
+                    className={`w-8 h-8 ${
+                      slug === "ibwave"
+                        ? "text-red-600"
+                        : slug === "eino"
+                        ? "text-green-600"
+                        : "text-blue-600"
+                    } mx-auto mb-3`}
+                  />
                   <p className="text-sm font-semibold text-gray-700">{item}</p>
                 </div>
               ))}
@@ -554,7 +680,11 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
         </section>
 
         {/* CTA Section - Modern Design */}
-        <section className={`py-20 bg-gradient-to-br ${gradientColors[slug as keyof typeof gradientColors]} text-white relative overflow-hidden`}>
+        <section
+          className={`py-20 bg-gradient-to-br ${
+            gradientColors[slug as keyof typeof gradientColors]
+          } text-white relative overflow-hidden`}
+        >
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-block p-4 bg-white/20 backdrop-blur-sm rounded-full mb-8">
@@ -564,7 +694,8 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
               Ready to Transform Your Network Operations?
             </h2>
             <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-              Discover how {partner.name} can revolutionize your wireless network management and deliver measurable results.
+              Discover how {partner.name} can revolutionize your wireless
+              network management and deliver measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -592,4 +723,3 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
     </div>
   );
 }
-
