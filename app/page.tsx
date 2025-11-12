@@ -15,12 +15,14 @@ import { AboutUsSection } from "@/components/about-us-section"
 import { PricingSection } from "@/components/pricing-section"
 import { ContactForm } from "@/components/contact-form"
 import { PartnersSection } from "@/components/partners-section"
+import { BrochureDownload } from "@/components/brochure-download"
 import { Phone, Mail, Clock } from "lucide-react"
 
 export default function Home() {
   return (
     <>
       <Header />
+      <BrochureDownload />
       <main>
         <div className="bg-white">
           <HeroSection />
