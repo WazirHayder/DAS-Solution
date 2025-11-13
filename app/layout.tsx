@@ -11,6 +11,26 @@ export const metadata: Metadata = {
   description:
     "Enterprise telecom & IT solutions for private 5G, in-building coverage, enterprise Wi-Fi, and network security.",
   generator: "v0.app",
+  icons: {
+    icon: [
+      {
+        url: "/DAS LOGO favicon.png",
+        type: "image/png",
+      },
+    ],
+    shortcut: [
+      {
+        url: "/DAS LOGO favicon.png",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/DAS LOGO favicon.png",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     title: "DASsolution - Private Wireless & In-Building Coverage",
     description:
