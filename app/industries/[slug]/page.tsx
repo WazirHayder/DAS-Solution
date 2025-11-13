@@ -37,6 +37,7 @@ const industryData: {
     title: string;
     description: string;
     subtitle: string;
+    heroImage: string;
     stats: { value: string; label: string; icon: React.ReactNode }[];
     challenges: string[];
     solutions: { title: string; description: string; icon: React.ReactNode }[];
@@ -49,6 +50,7 @@ const industryData: {
     title: "Healthcare",
     description: "Reliable connectivity for critical medical communications.",
     subtitle: "Where Every Second Matters",
+    heroImage: "/health industries.jpg",
     stats: [
       { value: "99.9%", label: "Uptime Guarantee", icon: <ShieldCheck className="w-8 h-8" /> },
       { value: "<1ms", label: "Network Latency", icon: <Zap className="w-8 h-8" /> },
@@ -109,6 +111,7 @@ const industryData: {
     title: "Corporate & Enterprise",
     description: "Seamless coverage for modern offices and campuses.",
     subtitle: "Empowering Modern Workforces",
+    heroImage: "/Corporate & Enterprise industry.jpg",
     stats: [
       { value: "10K+", label: "Devices Supported", icon: <Smartphone className="w-8 h-8" /> },
       { value: "Gigabit", label: "Wi-Fi Speeds", icon: <Wifi className="w-8 h-8" /> },
@@ -169,6 +172,7 @@ const industryData: {
     title: "Airports & Transportation",
     description: "Massive capacity networks for travelers and staff.",
     subtitle: "Connecting Millions, Every Day",
+    heroImage: "/airport industry.jpg",
     stats: [
       { value: "1M+", label: "Daily Passengers", icon: <Users className="w-8 h-8" /> },
       { value: "Multi", label: "Carrier Support", icon: <Network className="w-8 h-8" /> },
@@ -229,10 +233,11 @@ const industryData: {
     title: "Retail & Malls",
     description: "Enhancing shopper experience and store operations.",
     subtitle: "Elevating the Shopping Experience",
+    heroImage: "/Retail & Malls industry.jpg",
     stats: [
       { value: "5X", label: "Faster Checkout", icon: <Zap className="w-8 h-8" /> },
       { value: "98%", label: "Wi-Fi Coverage", icon: <Wifi className="w-8 h-8" /> },
-      { value: "35%", description: "Sales Increase", icon: <TrendingUp className="w-8 h-8" /> },
+      { value: "35%", label: "Sales Increase", icon: <TrendingUp className="w-8 h-8" /> },
       { value: "Real-time", label: "Inventory Sync", icon: <Network className="w-8 h-8" /> },
     ],
     challenges: [
@@ -289,6 +294,7 @@ const industryData: {
     title: "Logistics & Warehousing",
     description: "Connecting automated systems and workforce devices.",
     subtitle: "Optimizing Supply Chain Operations",
+    heroImage: "/logistic industry.jpg",
     stats: [
       { value: "99.8%", label: "System Uptime", icon: <CheckCircle className="w-8 h-8" /> },
       { value: "Real-time", label: "Data Tracking", icon: <Network className="w-8 h-8" /> },
@@ -349,6 +355,7 @@ const industryData: {
     title: "Education",
     description: "High-density Wi-Fi for modern learning environments.",
     subtitle: "Connecting the Next Generation",
+    heroImage: "/education industry.jpg",
     stats: [
       { value: "1:1", label: "Device Programs", icon: <School className="w-8 h-8" /> },
       { value: "10Gbps", label: "Network Capacity", icon: <Wifi className="w-8 h-8" /> },
@@ -409,6 +416,7 @@ const industryData: {
     title: "Hospitality",
     description: "Exceptional guest connectivity and hotel operations.",
     subtitle: "Elevating Guest Experiences",
+    heroImage: "/hospitality industry.jpg",
     stats: [
       { value: "Gigabit", label: "Guest Wi-Fi Speed", icon: <Wifi className="w-8 h-8" /> },
       { value: "99.9%", label: "Guest Satisfaction", icon: <Star className="w-8 h-8" /> },
@@ -514,21 +522,51 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                   </Button>
                 </div>
               </div>
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="aspect-video bg-gradient-to-br from-[#8fc447]/20 to-[#246598]/20"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl text-white/30">
-                      {industry.title === "Healthcare" && <Hospital />}
-                      {industry.title === "Corporate & Enterprise" && <Building />}
-                      {industry.title === "Airports & Transportation" && <Plane />}
-                      {industry.title === "Retail & Malls" && <ShoppingBag />}
-                      {industry.title === "Logistics & Warehousing" && <Warehouse />}
-                      {industry.title === "Education" && <School />}
-                      {industry.title === "Hospitality" && <Hotel />}
+              <div className="relative card-3d group">
+                {/* 3D Glow Effect Behind */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#8fc447]/40 via-[#246598]/40 to-[#8fc447]/40 rounded-3xl blur-3xl opacity-60 -z-10 transition-opacity duration-700 group-hover:opacity-80"></div>
+                
+                {/* Main 3D Container */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),0_0_80px_rgba(36,101,152,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] card-3d-container">
+                  {/* Animated Border Glow */}
+                  <div className="absolute inset-0 rounded-3xl border-2 border-white/30 group-hover:border-white/50 transition-all duration-500 shadow-[0_0_30px_rgba(143,196,71,0.3)] group-hover:shadow-[0_0_50px_rgba(143,196,71,0.5)] pointer-events-none"></div>
+                  
+                  {/* Image Container with 3D Effect */}
+                  <div className="relative aspect-video overflow-hidden card-3d-image">
+                    <div className="w-full h-full transition-transform duration-700 group-hover:scale-110">
+                      <Image
+                        src={industry.heroImage}
+                        alt={industry.title}
+                        width={800}
+                        height={600}
+                        className="w-full h-full object-cover"
+                        priority
+                      />
                     </div>
+                    
+                    {/* Multi-layer Gradient Overlays for 3D Depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#246598]/30 via-transparent to-[#8fc447]/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                    
+                    {/* Animated Shine Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out"></div>
+                    
+                    {/* Corner Highlights for 3D Look */}
+                    <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-br-full opacity-50"></div>
+                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-full opacity-30"></div>
                   </div>
+                  
+                  {/* 3D Drop Shadow Effect */}
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/40 rounded-full blur-2xl group-hover:bg-black/50 group-hover:h-16 transition-all duration-500"></div>
                 </div>
+                
+                {/* Floating Depth Elements */}
+                <div className="absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-[#8fc447]/30 to-[#246598]/30 rounded-full blur-3xl opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 -z-10"></div>
+                <div className="absolute -bottom-6 -left-6 w-36 h-36 bg-gradient-to-br from-[#246598]/25 to-[#8fc447]/25 rounded-full blur-3xl opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700 -z-10"></div>
+                
+                {/* Additional Light Reflection */}
+                <div className="absolute top-1/4 right-1/4 w-20 h-20 bg-white/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             </div>
           </div>

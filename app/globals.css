@@ -150,11 +150,39 @@ html {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* 3D Card Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-container {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(-8deg) rotateX(3deg);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-3d-container:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05);
+}
+
+.card-3d-image {
+  transform: translateZ(30px);
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  
+  .card-3d-container {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) !important;
+  }
+  
+  .card-3d-container:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1) !important;
   }
 }
