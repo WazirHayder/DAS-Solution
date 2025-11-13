@@ -296,9 +296,9 @@ const partnerData: {
       "Enterprise Wi-Fi and DAS orchestration",
     ],
     stats: [
-      { value: "500+", label: "Enterprises" },
+      { value: "15+", label: "Enterprises" },
       { value: "70%", label: "Time Savings" },
-      { value: "99.9%", label: "Uptime" },
+      { value: "99.5%", label: "Uptime" },
       { value: "Zero", label: "Vendor Lock-in" },
     ],
     features: [

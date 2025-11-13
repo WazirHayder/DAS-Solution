@@ -2893,9 +2893,9 @@ Channel 11 →  AP3, AP6, AP9...`}
           Future Expansion
         </h2>
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          Based on the success of the pilot program, the hotel chain has
-          committed to rolling out the DAS solution across all 500+ properties
-          over the next 24 months. The solution is designed to scale and can
+          Based on the success of the pilot program, the hotel group has
+          committed to rolling out the DAS solution across all 12 properties
+          over the next 12 months. The solution is designed to scale and can
           accommodate future technology upgrades including 5G support.
         </p>
 
@@ -4293,7 +4293,7 @@ Channel 11 →  AP3, AP6, AP9...`}
     date: "2024-12-10",
     author: "DASsolution Team",
     excerpt:
-      "How a major hospital achieved 99.99% network uptime with our comprehensive wireless solution.",
+      "How a major hospital achieved 99.5% network uptime with our comprehensive wireless solution.",
     readTime: "11 min read",
     content: (
       <div className="prose prose-lg max-w-none">
@@ -4305,7 +4305,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             A 500-bed regional medical center faced critical connectivity
             challenges that were impacting patient care and operational
             efficiency. This case study documents how a comprehensive wireless
-            solution transformed their network reliability, achieving 99.99%
+            solution transformed their network reliability, achieving 99.5%
             uptime and enabling critical healthcare applications that depend on
             reliable connectivity.
           </p>
@@ -4317,7 +4317,7 @@ Channel 11 →  AP3, AP6, AP9...`}
           </h3>
           <div className="grid md:grid-cols-3 gap-4 text-gray-700">
             <div>
-              <strong className="text-2xl text-[#246598]">99.99%</strong>
+              <strong className="text-2xl text-[#246598]">99.5%</strong>
               <br />
               Network uptime achieved
             </div>
@@ -4578,7 +4578,7 @@ Channel 11 →  AP3, AP6, AP9...`}
               <ul className="space-y-2 text-gray-700">
                 <li>
                   • Network uptime:{" "}
-                  <strong className="text-green-600">99.99%</strong>
+                  <strong className="text-green-600">99.5%</strong>
                 </li>
                 <li>
                   • Connectivity incidents:{" "}
@@ -4694,8 +4694,8 @@ Channel 11 →  AP3, AP6, AP9...`}
         <div className="bg-gradient-to-r from-[#246598] to-[#1a4a70] text-white p-8 rounded-2xl my-12">
           <h2 className="text-3xl font-bold mb-4">Conclusion</h2>
           <p className="text-lg leading-relaxed mb-4">
-            This case study demonstrates that achieving 99.99% network uptime in
-            healthcare environments is not only possible but essential. The
+            This case study demonstrates that achieving 99.5% network uptime in
+            healthcare environments is both attainable and essential. The
             comprehensive wireless solution transformed the hospital's
             connectivity, enabling critical healthcare applications and
             improving both patient care and operational efficiency.

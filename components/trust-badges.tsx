@@ -2,10 +2,10 @@
 
 export function TrustBadges() {
   const badges = [
-    { label: "Fortune 500 Clients", value: "500+" },
-    { label: "Global Coverage", value: "150+" },
-    { label: "Enterprise Grade", value: "99.99%" },
-    { label: "ISO Certified", value: "ISO 27001" },
+    { label: "Enterprise Clients", value: "15+" },
+    { label: "States Covered", value: "5" },
+    { label: "SLA Performance", value: "99.5%" },
+    { label: "Certified Engineers", value: "10" },
   ]
 
   return (

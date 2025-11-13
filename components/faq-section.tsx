@@ -79,11 +79,11 @@ const faqs = [
   {
     question: "What SLA do you guarantee?",
     answer:
-      "We guarantee 99.99% uptime SLA for all our solutions. This includes 24/7 monitoring, rapid response times, and proactive maintenance to ensure maximum availability.",
+      "We guarantee a 99.5% uptime SLA across our deployments. This includes on-call monitoring, rapid response times, and proactive maintenance to ensure availability.",
     icon: "✅",
     visual: {
       type: "stat",
-      value: "99.99%",
+      value: "99.5%",
       label: "Guaranteed Uptime",
     },
   },

@@ -358,7 +358,7 @@ export function Header() {
                                   <div className="w-px h-8 bg-white/20"></div>
                                   <div>
                                     <div className="text-2xl font-bold text-[#8fc447]">
-                                      500+
+                                      18+
                                     </div>
                                     <div className="text-blue-200 text-xs">
                                       Projects

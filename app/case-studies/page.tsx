@@ -9,11 +9,11 @@ import Image from "next/image"
 const caseStudies = [
   {
     id: "hotel-chain",
-    title: "Global Hotel Chain - In-Building Coverage",
+    title: "Regional Hotel Group - In-Building Coverage",
     industry: "Hospitality",
     challenge: "Poor cellular coverage in guest rooms affecting guest satisfaction",
-    solution: "Deployed DAS system across 15 properties",
-    results: ["95% guest satisfaction improvement", "40% increase in data usage", "99.99% uptime achieved"],
+    solution: "Deployed DAS system across 12 properties",
+    results: ["18% guest satisfaction improvement", "15% increase in data usage", "99.5% uptime achieved"],
     image: "/case-study-hotel-chain.jpg",
   },
   {
@@ -22,16 +22,16 @@ const caseStudies = [
     industry: "Healthcare",
     challenge: "Need for secure, low-latency network for medical devices",
     solution: "Implemented private 5G network with security protocols",
-    results: ["<10ms latency achieved", "HIPAA compliance maintained", "500+ connected medical devices"],
+    results: ["<20ms latency achieved", "HIPAA compliance maintained", "120+ connected medical devices"],
     image: "/industry-healthcare.jpg",
   },
   {
     id: "airport",
-    title: "International Airport - Enterprise Wi-Fi",
+    title: "Regional Airport - Enterprise Wi-Fi",
     industry: "Transportation",
-    challenge: "Support 50,000+ concurrent users with seamless roaming",
+    challenge: "Support 8,000+ concurrent users with seamless roaming",
     solution: "Deployed Wi-Fi 6E network across terminals",
-    results: ["1Gbps+ throughput", "99.95% availability", "Seamless roaming across 8 terminals"],
+    results: ["600 Mbps peak throughput", "99.5% availability", "Seamless roaming across 3 terminals"],
     image: "/industry-airports.jpg",
   },
 ]

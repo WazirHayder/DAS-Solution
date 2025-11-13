@@ -23,7 +23,7 @@ export function AboutUsSection() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 We are a leading provider of telecom and IT solutions, specializing in private wireless networks,
                 in-building coverage, and enterprise connectivity. With over a decade of experience, we've helped
-                hundreds of organizations transform their communication infrastructure.
+                dozens of organizations transform their communication infrastructure.
               </p>
             </div>
 
@@ -49,9 +49,9 @@ export function AboutUsSection() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">24/7 Support</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Dedicated Support</h3>
                   <p className="text-gray-600">
-                    Our dedicated team is always available to ensure your network runs smoothly.
+                    Our on-call team keeps your network running smoothly with fast response times.
                   </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export function AboutUsSection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Proven Results</h3>
-                  <p className="text-gray-600">99.99% SLA uptime and measurable ROI for every deployment.</p>
+                  <p className="text-gray-600">99.5% SLA uptime targets and measurable ROI for every deployment.</p>
                 </div>
               </div>
             </div>

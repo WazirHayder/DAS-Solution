@@ -25,9 +25,9 @@ export function ResourcesSection() {
     },
     {
       category: "Case Study",
-      title: "Achieving 99.99% Uptime in Healthcare Networks",
+      title: "Achieving 99.5% Uptime in Healthcare Networks",
       description:
-        "Learn how we designed and deployed a mission-critical network for a major healthcare provider with zero downtime.",
+        "Learn how we designed and deployed a mission-critical network for a major healthcare provider with minimal downtime.",
       date: "Oct 5, 2024",
       readTime: "10 min read",
       image: "/resource-healthcare.jpg",

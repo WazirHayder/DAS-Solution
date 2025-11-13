@@ -2,10 +2,10 @@
 
 export function MetricsSection() {
   const metrics = [
-    { value: "99.99%", label: "SLA Uptime", description: "Downtime Reduction" },
-    { value: "100%", label: "In-Building", description: "Coverage Improvement" },
-    { value: "40%", label: "Cost Savings", description: "TCO Reduction" },
-    { value: "50%", label: "Time Reduction", description: "Faster Deployment" },
+    { value: "99.5%", label: "SLA Uptime", description: "Downtime Reduction" },
+    { value: "98%", label: "In-Building", description: "Coverage Improvement" },
+    { value: "20%", label: "Cost Savings", description: "TCO Reduction" },
+    { value: "30%", label: "Time Reduction", description: "Faster Deployment" },
   ]
 
   return (

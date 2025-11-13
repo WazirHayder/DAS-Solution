@@ -13,8 +13,8 @@ export function AboutTeaser() {
               in-building coverage systems, and enterprise Wi-Fi deployments.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              With over 500 successful deployments and a 99.99% SLA uptime guarantee, we help enterprises achieve
-              seamless connectivity across their operations.
+              With 15+ successful deployments and a 99.5% uptime commitment, we help enterprises achieve seamless
+              connectivity across their operations.
             </p>
             <Button asChild className="bg-[#246598] hover:bg-[#1a4a70] text-white">
               <Link href="/about">Learn More About Us</Link>

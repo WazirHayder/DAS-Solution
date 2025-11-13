@@ -48,16 +48,16 @@ export function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
               <div>
-                <div className="text-3xl font-bold text-[#8fc447]">99.99%</div>
+                <div className="text-3xl font-bold text-[#8fc447]">99.5%</div>
                 <p className="text-sm text-gray-600">SLA Uptime</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#246598]">500+</div>
+                <div className="text-3xl font-bold text-[#246598]">15+</div>
                 <p className="text-sm text-gray-600">Sites Deployed</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#246598]">24/7</div>
-                <p className="text-sm text-gray-600">Support</p>
+                <div className="text-3xl font-bold text-[#246598]">On-call</div>
+                <p className="text-sm text-gray-600">Support Coverage</p>
               </div>
             </div>
           </div>

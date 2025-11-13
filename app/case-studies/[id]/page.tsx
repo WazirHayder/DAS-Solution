@@ -34,62 +34,70 @@ const caseStudiesData: {
 } = {
   "hotel-chain": {
     id: "hotel-chain",
-    title: "Global Hotel Chain - In-Building Coverage",
+    title: "Regional Hotel Group - In-Building Coverage",
     industry: "Hospitality",
     challenge: "Poor cellular coverage in guest rooms affecting guest satisfaction",
-    solution: "Deployed DAS system across 15 properties",
-    results: ["95% guest satisfaction improvement", "40% increase in data usage", "99.99% uptime achieved"],
+    solution: "Deployed DAS system across 12 properties",
+    results: ["18% guest satisfaction improvement", "15% increase in data usage", "99.5% uptime achieved"],
     image: "/case-study-hotel-chain.jpg",
     heroImage: "/case-study-hotel-chain.jpg",
-    overview: "A leading international hotel chain with 200+ properties worldwide was experiencing significant connectivity issues that were impacting guest satisfaction and operational efficiency. The challenge required a comprehensive solution that could be deployed across multiple properties while maintaining consistent quality and reliability.",
-    background: "The hotel chain operates luxury properties across North America, Europe, and Asia. With the increasing reliance on mobile devices for both guests and staff, poor cellular coverage was becoming a critical issue. Guest complaints about dropped calls and slow data speeds were rising, and the hotel's reputation was at stake.",
+    overview:
+      "A regional hotel group with 12 boutique properties was experiencing connectivity issues that impacted guest satisfaction and operational efficiency. The challenge required a comprehensive solution that could be deployed consistently while maintaining quality and reliability.",
+    background:
+      "The hotel group operates properties across major metropolitan areas. With the increasing reliance on mobile devices for both guests and staff, poor cellular coverage was becoming a critical issue. Guest complaints about dropped calls and slow data speeds were rising, and the brand's reputation was at stake.",
     approach: [
-      "Conducted comprehensive RF surveys across all 200+ properties to identify coverage gaps",
+      "Conducted detailed RF surveys across all 12 properties to identify coverage gaps",
       "Designed custom DAS (Distributed Antenna System) solutions tailored to each property's architecture",
       "Deployed carrier-neutral systems supporting all major cellular networks",
       "Implemented enterprise Wi-Fi 6 networks to complement cellular coverage",
-      "Established 24/7 monitoring and support infrastructure",
+      "Established on-call monitoring and support infrastructure",
       "Provided staff training and documentation for ongoing maintenance"
     ],
     keyMetrics: [
-      { label: "Properties Covered", value: "200+", icon: <Users className="w-6 h-6" /> },
-      { label: "Uptime SLA", value: "99.99%", icon: <Award className="w-6 h-6" /> },
-      { label: "Guest Satisfaction", value: "+35%", icon: <TrendingUp className="w-6 h-6" /> },
-      { label: "Deployment Time", value: "6 months", icon: <Clock className="w-6 h-6" /> },
-      { label: "Data Usage Increase", value: "40%", icon: <TrendingUp className="w-6 h-6" /> },
-      { label: "ROI Achievement", value: "18 months", icon: <Target className="w-6 h-6" /> }
+      { label: "Properties Covered", value: "12", icon: <Users className="w-6 h-6" /> },
+      { label: "Uptime SLA", value: "99.5%", icon: <Award className="w-6 h-6" /> },
+      { label: "Guest Satisfaction", value: "+18%", icon: <TrendingUp className="w-6 h-6" /> },
+      { label: "Deployment Time", value: "4 months", icon: <Clock className="w-6 h-6" /> },
+      { label: "Data Usage Increase", value: "15%", icon: <TrendingUp className="w-6 h-6" /> },
+      { label: "ROI Achievement", value: "12 months", icon: <Target className="w-6 h-6" /> }
     ],
-    timeline: "The project was completed in phases over 6 months, starting with high-priority properties and expanding systematically. Each property was deployed within 2-3 weeks, with minimal disruption to guest services.",
+    timeline:
+      "The project was completed in phases over 4 months, starting with high-priority flagship properties and expanding systematically. Each property was deployed within 3-4 weeks, with minimal disruption to guest services.",
     technologies: [
       "Carrier-Neutral DAS Systems",
       "Wi-Fi 6 Enterprise Networks",
       "Network Management Systems",
       "RF Planning & Optimization Tools",
-      "24/7 Monitoring Platforms"
+      "On-call Monitoring Platforms"
     ],
     impact: [
       {
         title: "Guest Experience Transformation",
-        description: "Guest satisfaction scores improved by 35%, with significant reductions in connectivity-related complaints. The seamless coverage enabled guests to stay connected throughout their stay, enhancing their overall experience."
+        description:
+          "Guest satisfaction scores improved by 18%, with significant reductions in connectivity-related complaints. The seamless coverage enabled guests to stay connected throughout their stay, enhancing their overall experience."
       },
       {
         title: "Operational Efficiency",
-        description: "Staff communication improved dramatically with reliable coverage across all areas of the properties. Mobile check-in processes became more efficient, reducing front desk wait times."
+        description:
+          "Staff communication improved dramatically with reliable coverage across all areas of the properties. Mobile check-in processes became more efficient, reducing front desk wait times."
       },
       {
         title: "Revenue Impact",
-        description: "Improved connectivity enabled better guest engagement through mobile apps and services. The 40% increase in data usage indicates guests were more engaged with hotel services and amenities."
+        description:
+          "Improved connectivity enabled better guest engagement through mobile apps and services. The 15% increase in data usage indicates guests were more engaged with hotel services and amenities."
       },
       {
         title: "Brand Reputation",
-        description: "The 99.99% uptime guarantee and consistent performance across all properties strengthened the hotel chain's reputation for quality and reliability in the hospitality industry."
+        description:
+          "The 99.5% uptime commitment and consistent performance across all properties strengthened the hotel group's reputation for quality and reliability in the hospitality industry."
       }
     ],
     testimonial: {
-      quote: "DASsolution transformed our connectivity infrastructure across all properties. The improvement in guest satisfaction has been remarkable, and the reliability of the system gives us complete confidence in our operations.",
+      quote:
+        "DASsolution transformed our connectivity infrastructure across every property. The improvement in guest satisfaction has been remarkable, and the reliability of the system gives us complete confidence in our operations.",
       author: "Sarah Mitchell",
       role: "VP of Technology",
-      company: "Global Hotel Chain"
+      company: "Regional Hotel Group"
     }
   },
   "hospital": {
@@ -98,11 +106,13 @@ const caseStudiesData: {
     industry: "Healthcare",
     challenge: "Need for secure, low-latency network for medical devices",
     solution: "Implemented private 5G network with security protocols",
-    results: ["<10ms latency achieved", "HIPAA compliance maintained", "500+ connected medical devices"],
+    results: ["<20ms latency achieved", "HIPAA compliance maintained", "120+ connected medical devices"],
     image: "/industry-healthcare.jpg",
     heroImage: "/industry-healthcare.jpg",
-    overview: "A major hospital network with multiple facilities required a secure, high-performance wireless network to support critical medical devices, telemedicine applications, and real-time patient monitoring systems. The solution needed to meet strict HIPAA compliance requirements while providing ultra-low latency for time-sensitive medical applications.",
-    background: "The hospital network serves over 500,000 patients annually across 12 facilities. With the increasing adoption of wireless medical devices, IoT sensors, and telemedicine platforms, the existing network infrastructure was insufficient. The hospital needed a solution that could support mission-critical applications with guaranteed performance and security.",
+    overview:
+      "A regional hospital network with multiple facilities required a secure, high-performance wireless network to support critical medical devices, telemedicine applications, and real-time patient monitoring systems. The solution needed to meet strict HIPAA compliance requirements while providing low latency for time-sensitive medical applications.",
+    background:
+      "The hospital network serves over 150,000 patients annually across four facilities. With the increasing adoption of wireless medical devices, IoT sensors, and telemedicine platforms, the existing network infrastructure was insufficient. The hospital needed a solution that could support mission-critical applications with guaranteed performance and security.",
     approach: [
       "Designed and deployed private 5G network infrastructure across all facilities",
       "Implemented network slicing to separate medical device traffic from guest Wi-Fi",
@@ -113,12 +123,12 @@ const caseStudiesData: {
       "Provided comprehensive staff training on network security and usage"
     ],
     keyMetrics: [
-      { label: "Network Latency", value: "<10ms", icon: <Clock className="w-6 h-6" /> },
-      { label: "Connected Devices", value: "500+", icon: <Users className="w-6 h-6" /> },
+      { label: "Network Latency", value: "<20ms", icon: <Clock className="w-6 h-6" /> },
+      { label: "Connected Devices", value: "120+", icon: <Users className="w-6 h-6" /> },
       { label: "HIPAA Compliance", value: "100%", icon: <Award className="w-6 h-6" /> },
-      { label: "Uptime", value: "99.99%", icon: <Award className="w-6 h-6" /> },
-      { label: "Facilities Covered", value: "12", icon: <Target className="w-6 h-6" /> },
-      { label: "Data Throughput", value: "10 Gbps", icon: <TrendingUp className="w-6 h-6" /> }
+      { label: "Uptime", value: "99.7%", icon: <Award className="w-6 h-6" /> },
+      { label: "Facilities Covered", value: "4", icon: <Target className="w-6 h-6" /> },
+      { label: "Data Throughput", value: "4 Gbps", icon: <TrendingUp className="w-6 h-6" /> }
     ],
     timeline: "The deployment was completed in phases over 8 months, prioritizing critical care units and emergency departments first. Each facility was brought online with zero downtime, ensuring continuous patient care throughout the transition.",
     technologies: [
@@ -156,17 +166,19 @@ const caseStudiesData: {
   },
   "airport": {
     id: "airport",
-    title: "International Airport - Enterprise Wi-Fi",
+    title: "Regional Airport - Enterprise Wi-Fi",
     industry: "Transportation",
-    challenge: "Support 50,000+ concurrent users with seamless roaming",
+    challenge: "Support 8,000+ concurrent users with seamless roaming",
     solution: "Deployed Wi-Fi 6E network across terminals",
-    results: ["1Gbps+ throughput", "99.95% availability", "Seamless roaming across 8 terminals"],
+    results: ["600 Mbps peak throughput", "99.5% availability", "Seamless roaming across 3 terminals"],
     image: "/industry-airports.jpg",
     heroImage: "/industry-airports.jpg",
-    overview: "A major international airport serving 50+ million passengers annually needed a robust Wi-Fi infrastructure capable of supporting massive concurrent user loads while providing seamless roaming across multiple terminals. The solution needed to handle peak traffic during busy travel periods while maintaining high performance and reliability.",
-    background: "The airport operates 8 terminals across a sprawling campus, with millions of passengers, staff, and airport operations relying on connectivity. The existing Wi-Fi infrastructure was unable to handle peak loads, resulting in poor user experience and operational challenges. The airport needed a solution that could scale with demand while providing enterprise-grade reliability.",
+    overview:
+      "A regional airport serving 6 million passengers annually needed a robust Wi-Fi infrastructure capable of supporting heavy concurrent user loads while providing seamless roaming across multiple terminals. The solution needed to handle peak traffic during busy travel periods while maintaining high performance and reliability.",
+    background:
+      "The airport operates three terminals across a compact campus, with thousands of passengers, staff, and airport operations relying on connectivity. The existing Wi-Fi infrastructure was unable to handle peak loads, resulting in poor user experience and operational challenges. The airport needed a solution that could scale with demand while providing enterprise-grade reliability.",
     approach: [
-      "Conducted comprehensive site surveys and capacity planning for all 8 terminals",
+      "Conducted comprehensive site surveys and capacity planning for all three terminals",
       "Designed Wi-Fi 6E network architecture with high-density access points",
       "Implemented seamless roaming technology for uninterrupted connectivity across terminals",
       "Deployed network management and analytics platforms for real-time monitoring",
@@ -175,14 +187,15 @@ const caseStudiesData: {
       "Implemented bandwidth management and quality of service (QoS) policies"
     ],
     keyMetrics: [
-      { label: "Concurrent Users", value: "50,000+", icon: <Users className="w-6 h-6" /> },
-      { label: "Network Throughput", value: "1 Gbps+", icon: <TrendingUp className="w-6 h-6" /> },
-      { label: "Availability", value: "99.95%", icon: <Award className="w-6 h-6" /> },
-      { label: "Terminals Covered", value: "8", icon: <Target className="w-6 h-6" /> },
-      { label: "Access Points", value: "2,500+", icon: <Target className="w-6 h-6" /> },
-      { label: "Roaming Latency", value: "<50ms", icon: <Clock className="w-6 h-6" /> }
+      { label: "Concurrent Users", value: "8,000+", icon: <Users className="w-6 h-6" /> },
+      { label: "Network Throughput", value: "600 Mbps", icon: <TrendingUp className="w-6 h-6" /> },
+      { label: "Availability", value: "99.5%", icon: <Award className="w-6 h-6" /> },
+      { label: "Terminals Covered", value: "3", icon: <Target className="w-6 h-6" /> },
+      { label: "Access Points", value: "320", icon: <Target className="w-6 h-6" /> },
+      { label: "Roaming Latency", value: "<40ms", icon: <Clock className="w-6 h-6" /> }
     ],
-    timeline: "The deployment was completed in phases over 10 months, with each terminal brought online sequentially to minimize disruption. The project included extensive testing and optimization to ensure seamless roaming and optimal performance across all areas.",
+    timeline:
+      "The deployment was completed in phases over 6 months, with each terminal brought online sequentially to minimize disruption. The project included extensive testing and optimization to ensure seamless roaming and optimal performance across all areas.",
     technologies: [
       "Wi-Fi 6E Access Points",
       "Centralized Network Management",
@@ -210,7 +223,8 @@ const caseStudiesData: {
       }
     ],
     testimonial: {
-      quote: "The Wi-Fi 6E deployment has transformed connectivity at our airport. We can now confidently support tens of thousands of concurrent users while maintaining excellent performance. The seamless roaming is particularly impressive.",
+      quote:
+        "The Wi-Fi 6E deployment has transformed connectivity at our airport. We can now confidently support thousands of concurrent users while maintaining excellent performance. The seamless roaming is particularly impressive.",
       author: "Michael Chen",
       role: "Director of IT Infrastructure",
       company: "International Airport Authority"

@@ -19,7 +19,7 @@ const values = [
   {
     icon: <Target className="size-8 text-[#8fc447]" />,
     title: "Reliability",
-    description: "Our commitment to a 99.99% uptime SLA ensures your network is always on when you need it most.",
+    description: "Our commitment to a 99.5% uptime SLA ensures your network is always on when you need it most.",
   },
   {
     icon: <Users className="size-8 text-[#8fc447]" />,

@@ -29,7 +29,7 @@ const solutionCategories = [
       "Ongoing maintenance and support",
     ],
     timeline: "4-8 weeks",
-    outcomes: ["99.99% uptime SLA", "40% improvement in signal strength", "Zero dropped calls in coverage area"],
+    outcomes: ["99.5% uptime SLA", "40% improvement in signal strength", "Zero dropped calls in coverage area"],
   },
   {
     id: "private-5g",
@@ -125,7 +125,7 @@ const solutionCategories = [
       "Quarterly reviews",
     ],
     timeline: "Ongoing",
-    outcomes: ["99.99% uptime", "Rapid issue resolution", "Proactive maintenance"],
+    outcomes: ["99.5% uptime", "Rapid issue resolution", "Proactive maintenance"],
   },
 ]
 
@@ -169,22 +169,22 @@ export default function SolutionsPage() {
                 <div className="flex justify-center mb-3">
                   <Award className="w-8 h-8 text-[#246598]" />
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">500+</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">15+</div>
                 <div className="text-sm text-gray-600">Successful Deployments</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <TrendingUp className="w-8 h-8 text-[#8fc447]" />
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">99.99%</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">99.5%</div>
                 <div className="text-sm text-gray-600">Uptime SLA</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <Users className="w-8 h-8 text-[#246598]" />
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">24/7</div>
-                <div className="text-sm text-gray-600">Support Available</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">On-call</div>
+                <div className="text-sm text-gray-600">Support Availability</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
@@ -374,7 +374,7 @@ export default function SolutionsPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
                 <p className="text-gray-600">
-                  Over 500 successful deployments across diverse industries with 99.99% uptime guarantee
+                  Over 15 successful deployments across diverse industries with a 99.5% uptime commitment
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl border border-green-100">

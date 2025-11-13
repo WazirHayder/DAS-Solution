@@ -8,9 +8,9 @@ export function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "DAS Solution transformed our network infrastructure. The 99.99% uptime guarantee gave us peace of mind.",
+      quote: "DAS Solution transformed our network infrastructure. Their 99.5% uptime commitment gave us peace of mind.",
       author: "John Smith",
-      role: "CTO, Global Hotels Inc.",
+      role: "CTO, Regional Hospitality Group",
       avatar: "JS",
     },
     {

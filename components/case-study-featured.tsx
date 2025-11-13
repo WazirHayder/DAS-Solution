@@ -22,28 +22,27 @@ export function CaseStudyFeatured() {
 
           {/* Right - Content */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Hotel Chain: 99.99% Uptime Achieved</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Regional Hotel Group: 99.5% Uptime Delivered</h3>
             <p className="text-gray-600 mb-6">
-              A leading international hotel chain needed seamless connectivity across 200+ properties. We deployed a
-              comprehensive DAS and Wi-Fi solution, achieving 99.99% uptime and improving guest satisfaction scores by
-              35%.
+              A growing hospitality brand needed seamless connectivity across 12 properties. We deployed a targeted DAS
+              and Wi-Fi solution, delivering 99.5% uptime and improving guest satisfaction scores by 18%.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <p className="text-3xl font-bold text-[#246598]">200+</p>
+                <p className="text-3xl font-bold text-[#246598]">12</p>
                 <p className="text-sm text-gray-600">Properties Covered</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#246598]">99.99%</p>
+                <p className="text-3xl font-bold text-[#246598]">99.5%</p>
                 <p className="text-sm text-gray-600">Uptime SLA</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#246598]">35%</p>
+                <p className="text-3xl font-bold text-[#246598]">18%</p>
                 <p className="text-sm text-gray-600">Guest Satisfaction ↑</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#246598]">6 mo</p>
+                <p className="text-3xl font-bold text-[#246598]">4 mo</p>
                 <p className="text-sm text-gray-600">Deployment Time</p>
               </div>
             </div>

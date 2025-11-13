@@ -110,7 +110,7 @@ const resources = [
     category: "Case Study",
     date: "2024-12-10",
   author: "DAS Solution Team",
-    excerpt: "How a major hospital achieved 99.99% network uptime with our comprehensive wireless solution.",
+    excerpt: "How a major hospital achieved 99.5% network uptime with our comprehensive wireless solution.",
     readTime: "11 min read",
   },
   {

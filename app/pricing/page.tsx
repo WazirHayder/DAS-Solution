@@ -35,7 +35,7 @@ const pricingTiers = [
       "Advanced RF optimization",
       "Priority phone support",
       "Weekly reporting",
-      "Enhanced SLA (99.9%)",
+      "Enhanced SLA (99.7%)",
       "Drive testing included",
       "Quarterly optimization reviews",
     ],
@@ -52,7 +52,7 @@ const pricingTiers = [
       "Custom RF design",
       "24/7 dedicated support",
       "Real-time monitoring",
-      "Premium SLA (99.99%)",
+      "Premium SLA (99.9%)",
       "On-site technical team",
       "Custom integrations",
       "Quarterly business reviews",
@@ -76,7 +76,7 @@ const featureComparison = [
     professional: "Priority Phone",
     enterprise: "24/7 Dedicated",
   },
-  { feature: "SLA", starter: "99.5%", professional: "99.9%", enterprise: "99.99%" },
+  { feature: "SLA", starter: "99.5%", professional: "99.7%", enterprise: "99.9%" },
   { feature: "Reporting", starter: "Monthly", professional: "Weekly", enterprise: "Real-time" },
   { feature: "Drive Testing", starter: false, professional: true, enterprise: true },
   {
@@ -120,9 +120,9 @@ const pricingFaqs = [
   {
     question: "What is your SLA guarantee?",
     answer:
-      "Our SLA guarantees uptime based on your plan: Starter (99.5%), Professional (99.9%), and Enterprise (99.99%). We are committed to providing a reliable service.",
+      "Our SLA guarantees uptime based on your plan: Starter (99.5%), Professional (99.7%), and Enterprise (99.9%). We are committed to providing a reliable service.",
     icon: "✅",
-    visual: { type: "stat", value: "99.99%", label: "Enterprise Uptime" },
+    visual: { type: "stat", value: "99.9%", label: "Enterprise Uptime" },
   },
 ]
 

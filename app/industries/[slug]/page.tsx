@@ -52,9 +52,9 @@ const industryData: {
     subtitle: "Where Every Second Matters",
     heroImage: "/health industries.jpg",
     stats: [
-      { value: "99.9%", label: "Uptime Guarantee", icon: <ShieldCheck className="w-8 h-8" /> },
-      { value: "<1ms", label: "Network Latency", icon: <Zap className="w-8 h-8" /> },
-      { value: "24/7", label: "Support Coverage", icon: <Clock className="w-8 h-8" /> },
+      { value: "99.5%", label: "Uptime Guarantee", icon: <ShieldCheck className="w-8 h-8" /> },
+      { value: "<20ms", label: "Network Latency", icon: <Zap className="w-8 h-8" /> },
+      { value: "On-call", label: "Support Coverage", icon: <Clock className="w-8 h-8" /> },
       { value: "HIPAA", label: "Compliant", icon: <Award className="w-8 h-8" /> },
     ],
     challenges: [
@@ -101,9 +101,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "45%", description: "Reduction in communication delays" },
+      { metric: "30%", description: "Reduction in communication delays" },
       { metric: "100%", description: "HIPAA compliance rate" },
-      { metric: "60%", description: "Faster emergency response time" },
+      { metric: "25%", description: "Faster emergency response time" },
     ],
     content: <></>,
   },
@@ -113,10 +113,10 @@ const industryData: {
     subtitle: "Empowering Modern Workforces",
     heroImage: "/Corporate & Enterprise industry.jpg",
     stats: [
-      { value: "10K+", label: "Devices Supported", icon: <Smartphone className="w-8 h-8" /> },
+      { value: "2K+", label: "Devices Supported", icon: <Smartphone className="w-8 h-8" /> },
       { value: "Gigabit", label: "Wi-Fi Speeds", icon: <Wifi className="w-8 h-8" /> },
-      { value: "99.5%", label: "User Satisfaction", icon: <TrendingUp className="w-8 h-8" /> },
-      { value: "Zero", label: "Downtime Incidents", icon: <CheckCircle className="w-8 h-8" /> },
+      { value: "96%", label: "User Satisfaction", icon: <TrendingUp className="w-8 h-8" /> },
+      { value: "<1/mo", label: "Downtime Incidents", icon: <CheckCircle className="w-8 h-8" /> },
     ],
     challenges: [
       "High-density device connections in open offices",
@@ -162,9 +162,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "30%", description: "Increase in productivity" },
-      { metric: "95%", description: "Faster file transfers" },
-      { metric: "Zero", description: "Security breaches" },
+      { metric: "20%", description: "Increase in productivity" },
+      { metric: "85%", description: "Faster file transfers" },
+      { metric: "0", description: "Critical security incidents reported" },
     ],
     content: <></>,
   },
@@ -174,10 +174,10 @@ const industryData: {
     subtitle: "Connecting Millions, Every Day",
     heroImage: "/airport industry.jpg",
     stats: [
-      { value: "1M+", label: "Daily Passengers", icon: <Users className="w-8 h-8" /> },
+      { value: "60K", label: "Daily Passengers", icon: <Users className="w-8 h-8" /> },
       { value: "Multi", label: "Carrier Support", icon: <Network className="w-8 h-8" /> },
-      { value: "99.9%", label: "Operational Uptime", icon: <CheckCircle className="w-8 h-8" /> },
-      { value: "24/7", label: "Network Monitoring", icon: <Clock className="w-8 h-8" /> },
+      { value: "99.5%", label: "Operational Uptime", icon: <CheckCircle className="w-8 h-8" /> },
+      { value: "On-call", label: "Network Monitoring", icon: <Clock className="w-8 h-8" /> },
     ],
     challenges: [
       "Handling peak travel traffic surges",
@@ -223,9 +223,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "50%", description: "Reduction in connectivity complaints" },
-      { metric: "99.9%", description: "System uptime achieved" },
-      { metric: "40%", description: "Faster check-in processes" },
+      { metric: "25%", description: "Reduction in connectivity complaints" },
+      { metric: "99.5%", description: "System uptime achieved" },
+      { metric: "20%", description: "Faster check-in processes" },
     ],
     content: <></>,
   },
@@ -235,9 +235,9 @@ const industryData: {
     subtitle: "Elevating the Shopping Experience",
     heroImage: "/Retail & Malls industry.jpg",
     stats: [
-      { value: "5X", label: "Faster Checkout", icon: <Zap className="w-8 h-8" /> },
-      { value: "98%", label: "Wi-Fi Coverage", icon: <Wifi className="w-8 h-8" /> },
-      { value: "35%", label: "Sales Increase", icon: <TrendingUp className="w-8 h-8" /> },
+      { value: "2X", label: "Faster Checkout", icon: <Zap className="w-8 h-8" /> },
+      { value: "95%", label: "Wi-Fi Coverage", icon: <Wifi className="w-8 h-8" /> },
+      { value: "12%", label: "Sales Increase", icon: <TrendingUp className="w-8 h-8" /> },
       { value: "Real-time", label: "Inventory Sync", icon: <Network className="w-8 h-8" /> },
     ],
     challenges: [
@@ -284,9 +284,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "35%", description: "Increase in customer satisfaction" },
-      { metric: "25%", description: "Faster transaction processing" },
-      { metric: "20%", description: "Reduction in inventory loss" },
+      { metric: "20%", description: "Increase in customer satisfaction" },
+      { metric: "15%", description: "Faster transaction processing" },
+      { metric: "10%", description: "Reduction in inventory loss" },
     ],
     content: <></>,
   },
@@ -296,9 +296,9 @@ const industryData: {
     subtitle: "Optimizing Supply Chain Operations",
     heroImage: "/logistic industry.jpg",
     stats: [
-      { value: "99.8%", label: "System Uptime", icon: <CheckCircle className="w-8 h-8" /> },
+      { value: "99.4%", label: "System Uptime", icon: <CheckCircle className="w-8 h-8" /> },
       { value: "Real-time", label: "Data Tracking", icon: <Network className="w-8 h-8" /> },
-      { value: "30%", label: "Efficiency Gain", icon: <TrendingUp className="w-8 h-8" /> },
+      { value: "18%", label: "Efficiency Gain", icon: <TrendingUp className="w-8 h-8" /> },
       { value: "IoT", label: "Device Support", icon: <Radio className="w-8 h-8" /> },
     ],
     challenges: [
@@ -345,9 +345,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "30%", description: "Faster order fulfillment" },
-      { metric: "25%", description: "Reduction in errors" },
-      { metric: "40%", description: "Increase in throughput" },
+      { metric: "18%", description: "Faster order fulfillment" },
+      { metric: "12%", description: "Reduction in errors" },
+      { metric: "20%", description: "Increase in throughput" },
     ],
     content: <></>,
   },
@@ -358,9 +358,9 @@ const industryData: {
     heroImage: "/education industry.jpg",
     stats: [
       { value: "1:1", label: "Device Programs", icon: <School className="w-8 h-8" /> },
-      { value: "10Gbps", label: "Network Capacity", icon: <Wifi className="w-8 h-8" /> },
-      { value: "95%", label: "Student Satisfaction", icon: <Star className="w-8 h-8" /> },
-      { value: "24/7", label: "Learning Access", icon: <Clock className="w-8 h-8" /> },
+      { value: "2 Gbps", label: "Network Capacity", icon: <Wifi className="w-8 h-8" /> },
+      { value: "92%", label: "Student Satisfaction", icon: <Star className="w-8 h-8" /> },
+      { value: "On-demand", label: "Learning Access", icon: <Clock className="w-8 h-8" /> },
     ],
     challenges: [
       "One-to-one device program support",
@@ -406,9 +406,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "40%", description: "Improvement in engagement" },
-      { metric: "90%", description: "Students satisfied with connectivity" },
-      { metric: "Zero", description: "Security incidents" },
+      { metric: "18%", description: "Improvement in engagement" },
+      { metric: "88%", description: "Students satisfied with connectivity" },
+      { metric: "0", description: "Major security incidents" },
     ],
     content: <></>,
   },
@@ -419,9 +419,9 @@ const industryData: {
     heroImage: "/hospitality industry.jpg",
     stats: [
       { value: "Gigabit", label: "Guest Wi-Fi Speed", icon: <Wifi className="w-8 h-8" /> },
-      { value: "99.9%", label: "Guest Satisfaction", icon: <Star className="w-8 h-8" /> },
-      { value: "Zero", label: "Complaints", icon: <CheckCircle className="w-8 h-8" /> },
-      { value: "24/7", label: "Network Monitoring", icon: <Clock className="w-8 h-8" /> },
+      { value: "94%", label: "Guest Satisfaction", icon: <Star className="w-8 h-8" /> },
+      { value: "<5/mo", label: "Complaints", icon: <CheckCircle className="w-8 h-8" /> },
+      { value: "On-call", label: "Network Monitoring", icon: <Clock className="w-8 h-8" /> },
     ],
     challenges: [
       "High-speed guest Wi-Fi expectations",
@@ -467,9 +467,9 @@ const industryData: {
       },
     ],
     impact: [
-      { metric: "45%", description: "Increase in guest satisfaction scores" },
-      { metric: "30%", description: "Improvement in online ratings" },
-      { metric: "25%", description: "Reduction in support tickets" },
+      { metric: "18%", description: "Increase in guest satisfaction scores" },
+      { metric: "12%", description: "Improvement in online ratings" },
+      { metric: "15%", description: "Reduction in support tickets" },
     ],
     content: <></>,
   },
@@ -532,29 +532,31 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                   <div className="absolute inset-0 rounded-3xl border-2 border-white/30 group-hover:border-white/50 transition-all duration-500 shadow-[0_0_30px_rgba(143,196,71,0.3)] group-hover:shadow-[0_0_50px_rgba(143,196,71,0.5)] pointer-events-none"></div>
                   
                   {/* Image Container with 3D Effect */}
-                  <div className="relative aspect-video overflow-hidden card-3d-image">
-                    <div className="w-full h-full transition-transform duration-700 group-hover:scale-110">
-                      <Image
-                        src={industry.heroImage}
-                        alt={industry.title}
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover"
-                        priority
-                      />
+                  <div className="relative p-[5px] rounded-[26px] bg-gradient-to-br from-[#9dd65a] via-[#6fb142] to-[#246598]">
+                    <div className="relative aspect-video overflow-hidden rounded-[22px] card-3d-image shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]">
+                      <div className="w-full h-full transition-transform duration-700 group-hover:scale-110">
+                        <Image
+                          src={industry.heroImage}
+                          alt={industry.title}
+                          width={800}
+                          height={600}
+                          className="w-full h-full object-cover"
+                          priority
+                        />
+                      </div>
+                      
+                      {/* Multi-layer Gradient Overlays for 3D Depth */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#246598]/30 via-transparent to-[#8fc447]/30"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                      
+                      {/* Animated Shine Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out"></div>
+                      
+                      {/* Corner Highlights for 3D Look */}
+                      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-br-full opacity-50"></div>
+                      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-full opacity-30"></div>
                     </div>
-                    
-                    {/* Multi-layer Gradient Overlays for 3D Depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#246598]/30 via-transparent to-[#8fc447]/30"></div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
-                    
-                    {/* Animated Shine Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out"></div>
-                    
-                    {/* Corner Highlights for 3D Look */}
-                    <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-br-full opacity-50"></div>
-                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-full opacity-30"></div>
                   </div>
                   
                   {/* 3D Drop Shadow Effect */}
