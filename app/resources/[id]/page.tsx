@@ -24,7 +24,7 @@ const resourceData: {
     type: "Whitepaper",
     category: "Technical",
     date: "2025-01-15",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "Learn everything you need to know about distributed antenna systems, from design principles to deployment best practices.",
     readTime: "15 min read",
@@ -1334,7 +1334,7 @@ const resourceData: {
     type: "Whitepaper",
     category: "Security",
     date: "2024-12-28",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "Understand the critical security considerations for modern wireless networks and how to protect your infrastructure.",
     readTime: "18 min read",
@@ -2456,7 +2456,7 @@ Channel 11 →  AP3, AP6, AP9...`}
     type: "Case Study",
     category: "Case Study",
     date: "2024-12-15",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "See how a global hotel chain improved guest satisfaction by 95% with our DAS solution.",
     readTime: "10 min read",
@@ -3374,7 +3374,7 @@ Channel 11 →  AP3, AP6, AP9...`}
     type: "Blog Post",
     category: "Best Practices",
     date: "2025-01-03",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "Discover how to successfully implement IoT solutions in smart building environments with reliable connectivity.",
     readTime: "14 min read",
@@ -3817,7 +3817,7 @@ Channel 11 →  AP3, AP6, AP9...`}
     type: "Whitepaper",
     category: "Business",
     date: "2024-12-22",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "Learn proven strategies to reduce network costs while maintaining or improving performance and reliability.",
     readTime: "16 min read",
@@ -4291,7 +4291,7 @@ Channel 11 →  AP3, AP6, AP9...`}
     type: "Case Study",
     category: "Case Study",
     date: "2024-12-10",
-    author: "DASsolution Team",
+    author: "DAS Solution Team",
     excerpt:
       "How a major hospital achieved 99.5% network uptime with our comprehensive wireless solution.",
     readTime: "11 min read",
