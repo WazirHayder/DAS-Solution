@@ -384,7 +384,7 @@ const resourceData: {
             all users.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we bring years of experience and expertise to every
+            At DAS Solution, we bring years of experience and expertise to every
             project. Our team of certified engineers and technicians ensures
             your DAS deployment meets and exceeds performance expectations.
           </p>
@@ -791,7 +791,7 @@ const resourceData: {
             mature, the ecosystem is ready, and the business case is compelling.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we're helping enterprises navigate this evolution.
+            At DAS Solution, we're helping enterprises navigate this evolution.
             Our team combines deep technical expertise with industry knowledge
             to deliver private 5G solutions that drive real business value.
           </p>
@@ -1292,7 +1292,7 @@ const resourceData: {
             the benefits of Wi-Fi 6E technology.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we specialize in designing and deploying Wi-Fi 6E
+            At DAS Solution, we specialize in designing and deploying Wi-Fi 6E
             networks that deliver exceptional performance and reliability. Our
             team ensures your deployment follows industry best practices and
             meets your specific business requirements.
@@ -1792,7 +1792,7 @@ const resourceData: {
             monitoring, and regular security assessments.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we understand that security is paramount. Our
+            At DAS Solution, we understand that security is paramount. Our
             security-focused approach ensures your wireless infrastructure is
             protected against current and emerging threats while maintaining the
             performance and usability your organization requires.
@@ -2414,7 +2414,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             capacity, and performance.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, our RF engineering team specializes in optimizing
+            At DAS Solution, our RF engineering team specializes in optimizing
             wireless networks for maximum performance. We combine advanced
             tools, deep expertise, and proven methodologies to deliver
             optimization results that exceed expectations.
@@ -2593,7 +2593,7 @@ Channel 11 →  AP3, AP6, AP9...`}
           Comprehensive DAS Deployment
         </h3>
         <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-          DASsolution designed and deployed a comprehensive in-building wireless
+          DAS Solution designed and deployed a comprehensive in-building wireless
           solution across 50 pilot properties:
         </p>
 
@@ -2909,7 +2909,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             operational costs, and increased revenue opportunities.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we specialize in delivering wireless solutions that
+            At DAS Solution, we specialize in delivering wireless solutions that
             make a real difference. Our expertise in hospitality industry
             deployments ensures your guests experience seamless connectivity
             that enhances their stay.
@@ -3346,7 +3346,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             Stay Ahead of the Curve
           </h3>
           <p className="text-lg text-gray-700 mb-6">
-            Contact DASsolution to discuss how emerging wireless technologies
+            Contact DAS Solution to discuss how emerging wireless technologies
             can transform your enterprise connectivity strategy.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -3777,7 +3777,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             the full potential of smart building technologies.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we specialize in designing and deploying IoT
+            At DAS Solution, we specialize in designing and deploying IoT
             connectivity solutions that enable smart building initiatives. Our
             expertise ensures your IoT deployment is secure, scalable, and
             delivers real business value.
@@ -4251,7 +4251,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             network performance, reliability, and user experience.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we help enterprises optimize their network costs
+            At DAS Solution, we help enterprises optimize their network costs
             through comprehensive analysis, strategic planning, and
             implementation of proven optimization techniques. Our expertise
             ensures your network investments deliver maximum value.
@@ -4419,7 +4419,7 @@ Channel 11 →  AP3, AP6, AP9...`}
           Comprehensive Wireless Infrastructure
         </h3>
         <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-          DASsolution designed and deployed a mission-critical wireless
+          DAS Solution designed and deployed a mission-critical wireless
           solution:
         </p>
 
@@ -4701,7 +4701,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             improving both patient care and operational efficiency.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we understand the unique requirements of healthcare
+            At DAS Solution, we understand the unique requirements of healthcare
             environments. Our solutions are designed to meet the highest
             standards of reliability, security, and compliance required for
             mission-critical healthcare applications.
@@ -5068,7 +5068,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             technology—or combination—that best meets your needs.
           </p>
           <p className="text-lg leading-relaxed">
-            At DASsolution, we help enterprises make informed decisions about
+            At DAS Solution, we help enterprises make informed decisions about
             wireless technology selection. Our expertise in both 5G and Wi-Fi 6
             ensures you get the right solution for your unique requirements.
           </p>
@@ -5445,7 +5445,7 @@ Channel 11 →  AP3, AP6, AP9...`}
             Develop Your Wireless Strategy
           </h3>
           <p className="text-lg text-gray-700 mb-6">
-            Contact DASsolution to discuss how we can help you develop and
+            Contact DAS Solution to discuss how we can help you develop and
             execute a strategic wireless approach that drives business value.
           </p>
           <div className="flex flex-wrap gap-4">

@@ -29,7 +29,7 @@ export default function PrivacyPage() {
               Last Updated: January 15, 2025
             </p>
             <p className="text-xl text-gray-700 leading-relaxed">
-              At DASsolution, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+              At DAS Solution, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
             </p>
           </div>
         </section>
@@ -218,7 +218,7 @@ export default function PrivacyPage() {
                   If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
                 </p>
                 <div className="space-y-3 text-gray-700">
-                  <p><strong>DASsolution</strong></p>
+                  <p><strong>DAS Solution</strong></p>
                   <p>Email: <a href="mailto:privacy@dassolution.com" className="text-[#246598] hover:underline">privacy@dassolution.com</a></p>
                   <p>Phone: <a href="tel:+923331234567" className="text-[#246598] hover:underline">+92 333 1234567</a></p>
                   <p>General Inquiries: <a href="mailto:info@dassolution.com" className="text-[#246598] hover:underline">info@dassolution.com</a></p>

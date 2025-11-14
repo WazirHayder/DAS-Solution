@@ -112,7 +112,7 @@ export default function TermsPage() {
                 <li>Maintain the security of your account credentials</li>
                 <li>Comply with all applicable laws and regulations</li>
                 <li>
-                  Respect the intellectual property rights of DASsolution and
+                  Respect the intellectual property rights of DAS Solution and
                   third parties
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function TermsPage() {
                 <li>Documentation, whitepapers, and technical materials</li>
               </ul>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                are owned by DASsolution or its licensors and are protected by
+                are owned by DAS Solution or its licensors and are protected by
                 copyright, trademark, and other intellectual property laws. You
                 may not use, reproduce, modify, or distribute any content
                 without our prior written permission.
@@ -182,7 +182,7 @@ export default function TermsPage() {
               </h2>
 
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                When you engage DASsolution for professional services, a
+                When you engage DAS Solution for professional services, a
                 separate service agreement or contract will be executed. That
                 agreement will govern the specific terms of engagement,
                 including:
@@ -253,7 +253,7 @@ export default function TermsPage() {
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li>
-                    • DASsolution shall not be liable for any indirect,
+                    • DAS Solution shall not be liable for any indirect,
                     incidental, special, consequential, or punitive damages
                   </li>
                   <li>
@@ -294,7 +294,7 @@ export default function TermsPage() {
               </h2>
 
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                You agree to indemnify, defend, and hold harmless DASsolution
+                You agree to indemnify, defend, and hold harmless DAS Solution
                 and its officers, directors, employees, and agents from and
                 against any claims, liabilities, damages, losses, costs, or
                 expenses (including reasonable attorneys' fees) arising out of
@@ -391,7 +391,7 @@ export default function TermsPage() {
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 These Terms, together with our Privacy Policy and any service
                 agreements, constitute the entire agreement between you and
-                DASsolution regarding your use of our services and supersede all
+                DAS Solution regarding your use of our services and supersede all
                 prior agreements and understandings.
               </p>
 
@@ -406,7 +406,7 @@ export default function TermsPage() {
                 </p>
                 <div className="space-y-3 text-gray-700">
                   <p>
-                    <strong>DASsolution</strong>
+                    <strong>DAS Solution</strong>
                   </p>
                   <p>
                     Email:{" "}

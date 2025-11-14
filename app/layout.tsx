@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DASsolution - Private Wireless & In-Building Coverage",
+  title: "DAS Solution - Private Wireless & In-Building Coverage",
   description:
     "Enterprise telecom & IT solutions for private 5G, in-building coverage, enterprise Wi-Fi, and network security.",
   generator: "v0.app",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "DASsolution - Private Wireless & In-Building Coverage",
+    title: "DAS Solution - Private Wireless & In-Building Coverage",
     description:
       "Enterprise telecom & IT solutions for private 5G, in-building coverage, enterprise Wi-Fi, and network security.",
     type: "website",

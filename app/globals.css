@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* DASsolution brand colors */
+  /* DAS Solution brand colors */
   --brand-primary: #246598;
   --brand-primary-light: #3a7ab8;
   --brand-primary-dark: #1a4a70;

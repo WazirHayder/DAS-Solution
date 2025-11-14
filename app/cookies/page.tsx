@@ -29,7 +29,7 @@ export default function CookiesPage() {
               Last Updated: January 15, 2025
             </p>
             <p className="text-xl text-gray-700 leading-relaxed">
-              This Cookie Policy explains how DASsolution uses cookies and similar tracking technologies on our website. It describes what cookies are, how we use them, and your choices regarding their use.
+              This Cookie Policy explains how DAS Solution uses cookies and similar tracking technologies on our website. It describes what cookies are, how we use them, and your choices regarding their use.
             </p>
           </div>
         </section>
@@ -265,7 +265,7 @@ export default function CookiesPage() {
                   If you have questions about our use of cookies or this Cookie Policy, please contact us:
                 </p>
                 <div className="space-y-3 text-gray-700">
-                  <p><strong>DASsolution</strong></p>
+                  <p><strong>DAS Solution</strong></p>
                   <p>Email: <a href="mailto:privacy@dassolution.com" className="text-[#246598] hover:underline">privacy@dassolution.com</a></p>
                   <p>Phone: <a href="tel:+923331234567" className="text-[#246598] hover:underline">+92 333 1234567</a></p>
                   <p>General Inquiries: <a href="mailto:info@dassolution.com" className="text-[#246598] hover:underline">info@dassolution.com</a></p>

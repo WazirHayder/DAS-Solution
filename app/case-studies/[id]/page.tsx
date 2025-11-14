@@ -94,7 +94,7 @@ const caseStudiesData: {
     ],
     testimonial: {
       quote:
-        "DASsolution transformed our connectivity infrastructure across every property. The improvement in guest satisfaction has been remarkable, and the reliability of the system gives us complete confidence in our operations.",
+        "DAS Solution transformed our connectivity infrastructure across every property. The improvement in guest satisfaction has been remarkable, and the reliability of the system gives us complete confidence in our operations.",
       author: "Sarah Mitchell",
       role: "VP of Technology",
       company: "Regional Hotel Group"
