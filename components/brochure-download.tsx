@@ -20,11 +20,11 @@ export function BrochureDownload() {
   }, [])
 
   const handleDownload = () => {
-    // Replace with actual brochure PDF path
-    const brochurePath = "/brochure.pdf"
+    // Path to the brochure in the public directory
+    const brochurePath = "/DAS Solution Brochure.pdf"
     const link = document.createElement("a")
     link.href = brochurePath
-    link.download = "DAS-Solution-Brochure.pdf"
+    link.download = "DAS Solution Brochure.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -80,4 +80,3 @@ export function BrochureDownload() {
     </div>
   )
 }
-
