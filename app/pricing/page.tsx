@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
@@ -11,51 +10,45 @@ import { FAQSection } from "@/components/faq-section";
 
 const pricingTiers = [
   {
-    name: "Starter",
-    monthlyPrice: 2999,
-    yearlyPrice: 29990,
-    description: "Perfect for small deployments",
+    name: "Basic Plan",
+    description: "Best for small-scale DAS deployments",
+    price: "$350 – $1,000",
     features: [
-      "Up to 5 access points",
-      "Basic RF design",
-      "Email support",
-      "Monthly reporting",
-      "Standard SLA (99.5%)",
+      "3D DAS Design",
+      "iBwave Design & Documentation", 
+      "RF Propagation Analysis Report",
+      "Coverage Planning & Signal Analysis",
+      "Up to 2 Design Revisions"
     ],
-    cta: "Start Free Assessment",
+    cta: "Get Quote",
     highlighted: false,
   },
   {
-    name: "Professional",
-    monthlyPrice: 7999,
-    yearlyPrice: 79990,
-    description: "For growing enterprises",
+    name: "Professional Plan",
+    description: "Best for medium to large deployments",
+    price: "$1,000 – $10,000",
     features: [
-      "Up to 50 access points",
-      "Advanced RF optimization",
-      "Priority phone support",
-      "Weekly reporting",
-      "Enhanced SLA (99.7%)",
-      "Drive testing included",
-      "Quarterly optimization reviews",
+      "All Basic Plan features",
+      "Detailed DAS Design Layouts",
+      "EMF (Electromagnetic Field) Compliance Reports",
+      "Bill of Materials (BOM)",
+      "Additional Technical & Performance Reports",
+      "Up to 4 Design Revisions"
     ],
-    cta: "Get Started",
+    cta: "Get Quote",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    monthlyPrice: null,
-    yearlyPrice: null,
-    description: "Custom solutions for large deployments",
+    name: "Enterprise Plan",
+    description: "Best for large-scale and mission-critical deployments",
+    price: "$10,000+",
     features: [
-      "Unlimited access points",
-      "Custom RF design",
-      "24/7 dedicated support",
-      "Real-time monitoring",
-      "Premium SLA (99.9%)",
-      "On-site technical team",
-      "Custom integrations",
-      "Quarterly business reviews",
+      "All Professional Plan features",
+      "Advanced RF Optimization & Performance Tuning",
+      "24/7 Dedicated Technical Support",
+      "Continuous Network Monitoring & Optimization",
+      "Custom Design & Reporting (as per project needs)",
+      "Unlimited Scalability & Custom Revisions"
     ],
     cta: "Contact Sales",
     highlighted: false,
@@ -127,7 +120,6 @@ const pricingFaqs = [
 ]
 
 export default function PricingPage() {
-  const [isYearly, setIsYearly] = useState(false)
 
   return (
     <>
@@ -136,51 +128,26 @@ export default function PricingPage() {
         {/* Hero */}
         <section className="bg-gradient-to-br from-white to-blue-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h1>
-            <p className="text-xl text-gray-600 max-w-2xl">Choose the plan that fits your enterprise needs</p>
+            <h1 className="text-5xl font-bold text-gray-900 mb-4">DAS Design Services</h1>
+            <p className="text-xl text-gray-600 max-w-2xl">Professional DAS design services tailored to your deployment needs</p>
           </div>
         </section>
 
         {/* Pricing */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Toggle */}
-            <div className="flex justify-center items-center gap-4 mb-12">
-              <span className={`text-lg font-semibold ${!isYearly ? "text-gray-900" : "text-gray-600"}`}>Monthly</span>
-              <button
-                onClick={() => setIsYearly(!isYearly)}
-                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                  isYearly ? "bg-[#246598]" : "bg-gray-300"
-                }`}
-                role="switch"
-                aria-checked={isYearly}
-              >
-                <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                    isYearly ? "translate-x-7" : "translate-x-1"
-                  }`}
-                />
-              </button>
-              <span className={`text-lg font-semibold ${isYearly ? "text-gray-900" : "text-gray-600"}`}>Yearly</span>
-              {isYearly && (
-                <span className="ml-2 inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                  Save 17%
-                </span>
-              )}
-            </div>
-
-            {/* Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pricingTiers.map((tier) => (
-                <Card
-                  key={tier.name}
-                  className={`relative p-8 flex flex-col rounded-xl transition-all duration-300 ${
-                    tier.highlighted
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+          <div className="max-w-6xl mx-auto relative z-10">
+            {/* Pricing Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {pricingTiers.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`relative rounded-xl transition-all duration-300 border ${
+                    plan.highlighted
                       ? "md:scale-105 bg-gradient-to-br from-[#8fc447] to-[#79a93b] text-white border-[#8fc447] shadow-lg"
                       : "bg-white border-gray-200 hover:border-gray-300 hover:shadow-md"
                   }`}
                 >
-                  {tier.highlighted && (
+                  {plan.highlighted && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-white text-[#8fc447] px-4 py-1 rounded-full text-xs font-bold shadow-md">
                         Most Popular
@@ -188,49 +155,63 @@ export default function PricingPage() {
                     </div>
                   )}
 
-                  <h3 className={`text-2xl font-bold mb-2 ${tier.highlighted ? "text-white" : "text-gray-900"}`}>{tier.name}</h3>
-                  <p className={`mb-6 ${tier.highlighted ? "text-green-100" : "text-gray-600"}`}>{tier.description}</p>
+                  <div className="p-8">
+                    <h3 className={`text-lg font-bold mb-1 ${plan.highlighted ? "text-white" : "text-gray-900"}`}>
+                      {plan.name}
+                    </h3>
+                    <p className={`text-xs mb-6 ${plan.highlighted ? "text-green-100" : "text-gray-600"}`}>
+                      {plan.description}
+                    </p>
 
-                  <div className="mb-6">
-                    {tier.monthlyPrice ? (
-                      <>
-                        <div className={`text-4xl font-bold ${tier.highlighted ? "text-white" : "text-gray-900"}`}>
-                          ${isYearly ? (tier.yearlyPrice / 12).toFixed(0) : tier.monthlyPrice}
-                        </div>
-                        <p className={`text-sm mt-2 ${tier.highlighted ? "text-green-100" : "text-gray-600"}`}>
-                          {isYearly ? "per month, billed yearly" : "per month"}
-                        </p>
-                        {isYearly && (
-                          <p className="text-green-600 text-sm font-semibold mt-2">${tier.yearlyPrice} per year</p>
-                        )}
-                      </>
-                    ) : (
-                      <div className={`text-2xl font-bold ${tier.highlighted ? "text-white" : "text-gray-900"}`}>Custom Pricing</div>
-                    )}
-                  </div>
-
-                  <Button
-                    asChild
-                    className={`w-full mb-8 ${
-                      tier.highlighted
-                        ? "bg-white text-[#79a93b] hover:bg-gray-100"
-                        : "bg-[#8fc447] text-white hover:bg-[#79a93b]"
-                    }`}
-                    variant={tier.highlighted ? "default" : "outline"}
-                  >
-                    <Link href="/contact">{tier.cta}</Link>
-                  </Button>
-
-                  <div className="space-y-4 flex-1">
-                    {tier.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <Check size={20} className={`${tier.highlighted ? "text-white" : "text-[#8fc447]"} flex-shrink-0 mt-0.5`} />
-                        <span className={`${tier.highlighted ? "text-green-50" : "text-gray-700"}`}>{feature}</span>
+                    {/* Price */}
+                    <div className="mb-6">
+                      <div className="flex items-baseline gap-1">
+                        <span className={`text-3xl font-bold ${plan.highlighted ? "text-white" : "text-gray-900"}`}>
+                          {plan.price}
+                        </span>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <button
+                      className={`w-full py-2 rounded-lg font-semibold transition-all duration-300 text-sm mb-6 ${
+                        plan.highlighted
+                          ? "bg-white text-[#79a93b] hover:bg-gray-100"
+                          : "bg-[#8fc447] text-white hover:bg-[#79a93b]"
+                      }`}
+                    >
+                      {plan.cta}
+                    </button>
+
+                    {/* Features */}
+                    <div className="space-y-3">
+                      <h4 className={`text-sm font-semibold mb-3 ${plan.highlighted ? "text-white" : "text-gray-900"}`}>
+                        Included Services:
+                      </h4>
+                      {plan.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex gap-2 items-start">
+                          <span
+                            className={`font-bold flex-shrink-0 text-sm ${plan.highlighted ? "text-white" : "text-[#8fc447]"}`}
+                          >
+                            ✓
+                          </span>
+                          <span className={`text-xs ${plan.highlighted ? "text-green-50" : "text-gray-700"}`}>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </Card>
+                </div>
               ))}
+            </div>
+
+            {/* Footer Note */}
+            <div className="text-center mt-10">
+              <p className="text-sm text-gray-600">
+                Need a custom solution?{" "}
+                <a href="/contact" className="text-[#8fc447] font-semibold hover:underline">
+                  Contact our design team
+                </a>
+              </p>
             </div>
           </div>
         </section>
@@ -341,9 +322,9 @@ export default function PricingPage() {
         <section className="py-16 bg-[#246598] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-lg mb-8 opacity-90">Choose your plan and start your free assessment today.</p>
+            <p className="text-lg mb-8 opacity-90">Choose your plan and get a custom quote for your DAS design project.</p>
             <Button asChild size="lg" className="bg-white text-[#246598] hover:bg-gray-100">
-              <Link href="/contact">Get Started</Link>
+              <Link href="/contact">Get Quote</Link>
             </Button>
           </div>
         </section>

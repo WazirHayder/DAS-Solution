@@ -1,42 +1,43 @@
-"use client"
-
-import { useState } from "react"
-
 export function PricingSection() {
-  const [isYearly, setIsYearly] = useState(false)
 
   const plans = [
     {
-      name: "Starter",
-      description: "Perfect for small deployments",
-      monthlyPrice: 2999,
-      features: ["Up to 5 sites", "Basic RF design", "Email support", "Monthly reporting", "Standard SLA (99.5%)"],
-    },
-    {
-      name: "Professional",
-      description: "For growing enterprises",
-      monthlyPrice: 7999,
-      featured: true,
+      name: "Basic Plan",
+      description: "Best for small-scale DAS deployments",
+      price: "$350 – $1,000",
       features: [
-        "Up to 25 sites",
-        "Advanced RF design",
-        "Priority support",
-        "Real-time monitoring",
-        "Premium SLA (99.7%)",
-        "Quarterly optimization",
+        "3D DAS Design",
+        "iBwave Design & Documentation",
+        "RF Propagation Analysis Report",
+        "Coverage Planning & Signal Analysis",
+        "Up to 2 Design Revisions"
       ],
     },
     {
-      name: "Enterprise",
-      description: "Custom solutions at scale",
-      monthlyPrice: 15999,
+      name: "Professional Plan",
+      description: "Best for medium to large deployments",
+      price: "$1,000 – $10,000",
+      featured: true,
       features: [
-        "Unlimited sites",
-        "Custom architecture",
-        "24/7 dedicated support",
-        "Advanced analytics",
-        "Enterprise SLA (99.9%)",
-        "Continuous optimization",
+        "All Basic Plan features",
+        "Detailed DAS Design Layouts",
+        "EMF (Electromagnetic Field) Compliance Reports",
+        "Bill of Materials (BOM)",
+        "Additional Technical & Performance Reports",
+        "Up to 4 Design Revisions"
+      ],
+    },
+    {
+      name: "Enterprise Plan",
+      description: "Best for large-scale and mission-critical deployments",
+      price: "$10,000+",
+      features: [
+        "All Professional Plan features",
+        "Advanced RF Optimization & Performance Tuning",
+        "24/7 Dedicated Technical Support",
+        "Continuous Network Monitoring & Optimization",
+        "Custom Design & Reporting (as per project needs)",
+        "Unlimited Scalability & Custom Revisions"
       ],
     },
   ]
@@ -47,38 +48,11 @@ export function PricingSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-3">
-            Transparent <span className="text-[#246598]">Pricing</span>
+            DAS Design <span className="text-[#246598]">Services</span>
           </h2>
           <p className="text-base text-gray-600 mb-8 max-w-2xl mx-auto">
-            Choose the perfect plan for your organization. All plans include a 14-day free trial.
+            Professional DAS design services tailored to your deployment needs. Choose the plan that fits your project requirements.
           </p>
-
-          {/* Toggle */}
-          <div className="flex items-center justify-center gap-4">
-            <span
-              className={`text-sm font-semibold transition-colors ${!isYearly ? "text-gray-900" : "text-gray-500"}`}
-            >
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsYearly(!isYearly)}
-              className="relative inline-flex h-8 w-14 items-center rounded-full transition-all duration-300"
-              style={{
-                backgroundColor: isYearly ? "#8fc447" : "#e5e7eb",
-              }}
-            >
-              <span
-                className="inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-300 shadow-md"
-                style={{
-                  transform: isYearly ? "translateX(1.5rem)" : "translateX(0.2rem)",
-                }}
-              />
-            </button>
-            <span className={`text-sm font-semibold transition-colors ${isYearly ? "text-gray-900" : "text-gray-500"}`}>
-              Yearly
-              {isYearly && <span className="ml-2 text-[#8fc447] font-bold text-xs">Save 20%</span>}
-            </span>
-          </div>
         </div>
 
         {/* Pricing Cards */}
@@ -111,18 +85,10 @@ export function PricingSection() {
                 {/* Price */}
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className={`text-4xl font-bold ${plan.featured ? "text-white" : "text-gray-900"}`}>
-                      ${isYearly ? Math.round(plan.monthlyPrice * 12 * 0.8) : plan.monthlyPrice}
-                    </span>
-                    <span className={`text-sm ${plan.featured ? "text-green-100" : "text-gray-600"}`}>
-                      {isYearly ? "/year" : "/month"}
+                    <span className={`text-3xl font-bold ${plan.featured ? "text-white" : "text-gray-900"}`}>
+                      {plan.price}
                     </span>
                   </div>
-                  {isYearly && (
-                    <p className={`text-xs mt-2 ${plan.featured ? "text-green-100" : "text-[#8fc447]"}`}>
-                      ${Math.round((plan.monthlyPrice * 12 * 0.8) / 12)}/month billed annually
-                    </p>
-                  )}
                 </div>
 
                 {/* CTA Button */}
@@ -133,11 +99,14 @@ export function PricingSection() {
                       : "bg-[#8fc447] text-white hover:bg-[#79a93b]"
                   }`}
                 >
-                  Get Started
+                  Get Quote
                 </button>
 
                 {/* Features */}
                 <div className="space-y-3">
+                  <h4 className={`text-sm font-semibold mb-3 ${plan.featured ? "text-white" : "text-gray-900"}`}>
+                    Included Services:
+                  </h4>
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex gap-2 items-start">
                       <span
@@ -157,9 +126,9 @@ export function PricingSection() {
         {/* Footer Note */}
         <div className="text-center mt-10">
           <p className="text-sm text-gray-600">
-            Need a custom plan?{" "}
+            Need a custom solution?{" "}
             <a href="/contact" className="text-[#8fc447] font-semibold hover:underline">
-              Contact our sales team
+              Contact our design team
             </a>
           </p>
         </div>

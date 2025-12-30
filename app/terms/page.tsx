@@ -406,7 +406,7 @@ export default function TermsPage() {
                 </p>
                 <div className="space-y-3 text-gray-700">
                   <p>
-                    <strong>DAS Solution</strong>
+                    <strong>DASsolution</strong>
                   </p>
                   <p>
                     Email:{" "}
@@ -479,3 +479,6 @@ export default function TermsPage() {
     </>
   );
 }
+
+
+
