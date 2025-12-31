@@ -378,7 +378,7 @@ export default function ConnectivityProblemsPage() {
               <Button asChild size="lg" className="bg-white text-[#246598] hover:bg-gray-100">
                 <Link href="/contact">Get Free Problem Assessment</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#246598]">
+              <Button asChild size="lg" variant="outline" className="bg-white text-[#246598] hover:bg-gray-100">
                 <Link href="/pricing">View Solution Pricing</Link>
               </Button>
             </div>
