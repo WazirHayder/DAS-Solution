@@ -428,6 +428,14 @@ export function Header() {
             </NavigationMenu>
 
             {/* Other Links */}
+            <div className="h-20 flex items-center">
+              <Link
+                href="/connectivity-problems"
+                className="px-3 py-2 text-gray-700 hover:text-[#246598] transition-colors text-sm font-medium"
+              >
+                Connectivity Problems
+              </Link>
+            </div>
             {otherLinks.map((link) => (
               <div key={link.href} className="h-20 flex items-center">
                 <Link
@@ -536,6 +544,13 @@ export function Header() {
               )}
 
               {/* Other Mobile Links */}
+              <Link
+                href="/connectivity-problems"
+                className="px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Connectivity Problems
+              </Link>
               {otherLinks.map((link) => (
                 <Link
                   key={link.href}
