@@ -26,7 +26,6 @@ import {
   Hotel,
   Radio,
   Users,
-  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -373,7 +372,7 @@ const solutionData: {
               </div>
             </div>
             <Image
-              src="/solutions-wifi.jpg"
+              src="/solutions-enterprise-wifi.jpg"
               alt="Enterprise Wi-Fi Access Point"
               width={500}
               height={350}
@@ -477,7 +476,7 @@ const solutionData: {
                 <div className="flex items-start"><Network className="w-6 h-6 text-[#8fc447] mr-3 mt-1 flex-shrink-0" /><div><h3 className="font-semibold text-gray-800">Real-Time IoT Data</h3><p className="text-gray-600">Reliably connect thousands of IoT sensors for real-time operational data.</p></div></div>
               </div>
             </div>
-            <Image src="/solutions-cctv.jpg" alt="CCTV and IoT" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
+            <Image src="/solutions-security.jpg" alt="CCTV and IoT" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
           </div>
         </section>
 
@@ -549,7 +548,7 @@ const solutionData: {
                 <div className="flex items-start"><Radio className="w-6 h-6 text-[#8fc447] mr-3 mt-1 flex-shrink-0" /><div><h3 className="font-semibold text-gray-800">Spectrum Analysis</h3><p className="text-gray-600">Identifying and mitigating sources of RF interference that degrade network performance.</p></div></div>
               </div>
             </div>
-            <Image src="/solutions-rf-design.jpg" alt="RF Design" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
+            <Image src="/solutions-optimization.jpg" alt="RF Design" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
           </div>
         </section>
 
@@ -622,7 +621,7 @@ const solutionData: {
                 <div className="flex items-start"><ShieldCheck className="w-6 h-6 text-[#8fc447] mr-3 mt-1 flex-shrink-0" /><div><h3 className="font-semibold text-gray-800">Proactive Maintenance</h3><p className="text-gray-600">Our AMCs include regular health checks and preventive maintenance to avoid downtime.</p></div></div>
               </div>
             </div>
-            <Image src="/solutions-consulting.jpg" alt="Consulting" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
+            <Image src="/solutions-maintenance.jpg" alt="Consulting" width={500} height={350} className="rounded-lg shadow-2xl object-cover" />
           </div>
         </section>
 
@@ -710,16 +709,6 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                   <PhoneCall className="w-5 h-5" />
                   Talk to an Expert
                 </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border border-white text-white hover:bg-[#8fc447] hover:text-[#1a4a70] hover:border-transparent bg-transparent"
-              >
-                <a href={solution.pdfPath} download className="flex items-center gap-2">
-                  <Download className="w-5 h-5" />
-                  Download Solution PDF
-                </a>
               </Button>
             </div>
           </div>

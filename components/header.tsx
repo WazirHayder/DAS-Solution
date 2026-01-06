@@ -204,7 +204,7 @@ export function Header() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-visible">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link
@@ -220,18 +220,41 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {/* Solutions Dropdown */}
             <div className="relative group h-20 flex items-center">
-              <button className="px-3 py-2 text-gray-700 hover:text-[#246598] transition-colors text-sm font-medium flex items-center gap-1">
+              <button 
+                onClick={() => {
+                  setIsSolutionsOpen(!isSolutionsOpen);
+                  setIsIndustriesOpen(false);
+                }}
+                className="px-3 py-2 text-gray-700 hover:text-[#246598] transition-colors text-sm font-medium flex items-center gap-1"
+              >
                 Solutions
-                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''} xl:group-hover:rotate-180`} />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] lg:w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+              {/* Simple Dropdown for Tablet */}
+              {isSolutionsOpen && (
+                <div className="xl:hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 z-50">
+                  <div className="py-2">
+                    {solutions.map((solution) => (
+                      <Link
+                        key={solution.href}
+                        href={solution.href}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#246598] transition-colors text-sm"
+                        onClick={() => setIsSolutionsOpen(false)}
+                      >
+                        {solution.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[calc(100vw-2rem)] xl:w-[90vw] max-w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 hidden xl:block z-50">
                 <div className="grid grid-cols-12 gap-0">
                   {/* Left side: Links grid */}
-                  <div className="col-span-8 p-6">
-                    <ul className="grid grid-cols-2 gap-3">
+                  <div className="col-span-12 xl:col-span-8 p-4 xl:p-6">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {solutions.map((solution) => {
                         const Icon = solution.icon;
                         return (
@@ -279,7 +302,7 @@ export function Header() {
                                   <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    strokeWidth={2}
+                                    strokeWidth="2"
                                     d="M9 5l7 7-7 7"
                                   />
                                 </svg>
@@ -293,7 +316,7 @@ export function Header() {
 
                   {/* Right side: Image/Featured */}
                   {hoveredSolution && (
-                    <div className="col-span-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-r-2xl p-5 flex flex-col justify-center transition-opacity duration-300 border-l border-gray-200">
+                    <div className="hidden xl:block col-span-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-r-2xl p-5 flex flex-col justify-center transition-opacity duration-300 border-l border-gray-200">
                       <div className="relative group/image mb-4">
                         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#246598]/10 to-[#8fc447]/10 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
                         <Image
@@ -317,47 +340,69 @@ export function Header() {
             </div>
 
             {/* Industries Mega Menu */}
-            <NavigationMenu viewport={false} className="!justify-start">
-              <NavigationMenuList className="justify-start">
-                <NavigationMenuItem className="h-20 flex items-center group">
-                  <NavigationMenuTrigger className="text-sm font-medium bg-transparent hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent data-[active]:!bg-transparent data-[state=open]:hover:!bg-transparent text-gray-700 hover:text-[#246598] transition-colors">
-                    Industries
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="!left-1/2 !-translate-x-[40%] md:!left-1/2 md:!-translate-x-[45%] p-0">
-                    <div className="w-[900px] lg:w-[1000px] p-6 bg-white rounded-2xl shadow-2xl border border-gray-100">
-                      <div className="grid grid-cols-12 gap-6">
+            <div className="relative group h-20 flex items-center">
+              <button 
+                onClick={() => {
+                  setIsIndustriesOpen(!isIndustriesOpen);
+                  setIsSolutionsOpen(false);
+                }}
+                className="px-3 py-2 text-gray-700 hover:text-[#246598] transition-colors text-sm font-medium flex items-center gap-1"
+              >
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? 'rotate-180' : ''} xl:group-hover:rotate-180`} />
+              </button>
+              {/* Simple Dropdown for Tablet */}
+              {isIndustriesOpen && (
+                <div className="xl:hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 z-50">
+                  <div className="py-2">
+                    {industries.map((industry) => (
+                      <Link
+                        key={industry.href}
+                        href={industry.href}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#246598] transition-colors text-sm"
+                        onClick={() => setIsIndustriesOpen(false)}
+                      >
+                        {industry.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[calc(100vw-2rem)] xl:w-[90vw] max-w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 z-50 hidden xl:block">
+                <div className="p-4 md:p-6">
+                      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 xl:gap-6">
                         {/* Left Side - Featured Content */}
-                        <div className="col-span-4 relative group">
-                          <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden bg-gradient-to-br from-[#246598] via-[#1a4a70] to-[#246598]">
+                        <div className="col-span-1 xl:col-span-4 relative group order-2 xl:order-1">
+                          <div className="relative h-full min-h-[200px] xl:min-h-[400px] rounded-xl overflow-hidden bg-gradient-to-br from-[#246598] via-[#1a4a70] to-[#246598]">
                             <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                            <div className="relative h-full flex flex-col justify-between p-8 text-white">
+                            <div className="relative h-full flex flex-col justify-between p-6 lg:p-8 text-white">
                               <div>
-                                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold mb-6">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold mb-4 lg:mb-6">
                                   <span className="w-2 h-2 bg-[#8fc447] rounded-full animate-pulse"></span>
                                   Industry Solutions
                                 </div>
-                                <h3 className="text-3xl font-extrabold mb-3 leading-tight">
+                                <h3 className="text-2xl lg:text-3xl font-extrabold mb-2 lg:mb-3 leading-tight">
                                   Industries We Empower
                                 </h3>
-                                <p className="text-base text-blue-100 leading-relaxed">
+                                <p className="text-sm lg:text-base text-blue-100 leading-relaxed">
                                   Tailored wireless solutions for the unique
                                   demands of your sector.
                                 </p>
                               </div>
-                              <div className="mt-8 pt-6 border-t border-white/20">
+                              <div className="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-white/20">
                                 <div className="flex items-center gap-4 text-sm">
                                   <div>
-                                    <div className="text-2xl font-bold text-[#8fc447]">
+                                    <div className="text-xl lg:text-2xl font-bold text-[#8fc447]">
                                       7+
                                     </div>
                                     <div className="text-blue-200 text-xs">
                                       Industries
                                     </div>
                                   </div>
-                                  <div className="w-px h-8 bg-white/20"></div>
+                                  <div className="w-px h-6 lg:h-8 bg-white/20"></div>
                                   <div>
-                                    <div className="text-2xl font-bold text-[#8fc447]">
+                                    <div className="text-xl lg:text-2xl font-bold text-[#8fc447]">
                                       18+
                                     </div>
                                     <div className="text-blue-200 text-xs">
@@ -371,19 +416,19 @@ export function Header() {
                         </div>
 
                         {/* Right Side - Industry Grid */}
-                        <div className="col-span-8">
-                          <ul className="grid grid-cols-2 gap-3">
+                        <div className="col-span-1 xl:col-span-8 order-1 xl:order-2">
+                          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             {industries.map((component, index) => (
                               <li key={component.title}>
                                 <Link
                                   href={component.href}
-                                  className="group relative flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-[#246598]/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                  className="group relative flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-[#246598]/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                                 >
                                   {/* Gradient Accent */}
                                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#246598]/5 to-[#8fc447]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                   {/* Icon Container */}
-                                  <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-lg bg-white border border-gray-200 group-hover:border-[#246598] group-hover:bg-[#246598]/5 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                  <div className="relative z-10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white border border-gray-200 group-hover:border-[#246598] group-hover:bg-[#246598]/5 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                                     <div className="text-[#246598] group-hover:text-[#246598] transition-colors duration-300">
                                       {component.icon}
                                     </div>
@@ -391,18 +436,18 @@ export function Header() {
 
                                   {/* Content */}
                                   <div className="relative z-10 flex-grow min-w-0">
-                                    <h4 className="font-bold text-gray-900 text-base mb-1.5 group-hover:text-[#246598] transition-colors duration-300">
+                                    <h4 className="font-bold text-gray-900 text-sm sm:text-base mb-1 sm:mb-1.5 group-hover:text-[#246598] transition-colors duration-300">
                                       {component.title}
                                     </h4>
-                                    <p className="text-sm text-gray-600 line-clamp-2 leading-snug group-hover:text-gray-700 transition-colors duration-300">
+                                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-snug group-hover:text-gray-700 transition-colors duration-300">
                                       {component.description}
                                     </p>
                                   </div>
 
                                   {/* Arrow Indicator */}
-                                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <svg
-                                      className="w-5 h-5 text-[#246598]"
+                                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#246598]"
                                       fill="none"
                                       stroke="currentColor"
                                       viewBox="0 0 24 24"
@@ -410,7 +455,7 @@ export function Header() {
                                       <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        strokeWidth={2}
+                                        strokeWidth="2"
                                         d="M9 5l7 7-7 7"
                                       />
                                     </svg>
@@ -421,11 +466,9 @@ export function Header() {
                           </ul>
                         </div>
                       </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+                </div>
+              </div>
+            </div>
 
             {/* Other Links */}
             <div className="h-20 flex items-center">
@@ -433,7 +476,7 @@ export function Header() {
                 href="/connectivity-problems"
                 className="px-3 py-2 text-gray-700 hover:text-[#246598] transition-colors text-sm font-medium"
               >
-                Connectivity Problems
+                In-Building Solutions
               </Link>
             </div>
             {otherLinks.map((link) => (
@@ -448,15 +491,8 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex gap-3">
-            <Button
-              asChild
-              variant="outline"
-              className="border-[#246598] text-[#246598] hover:bg-blue-50 bg-transparent"
-            >
-              <Link href="/contact">Get Quote</Link>
-            </Button>
+          {/* Book Consultation Button - Right Side */}
+          <div className="hidden lg:flex items-center">
             <Button
               asChild
               className="bg-[#8fc447] hover:bg-[#79a93b] text-white"
@@ -464,6 +500,7 @@ export function Header() {
               <Link href="/contact">Book Consultation</Link>
             </Button>
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -549,7 +586,7 @@ export function Header() {
                 className="px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Connectivity Problems
+                In-Building Solutions
               </Link>
               {otherLinks.map((link) => (
                 <Link
@@ -563,13 +600,6 @@ export function Header() {
               ))}
 
               <div className="flex flex-col gap-2 pt-4 px-4">
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-[#246598] text-[#246598] bg-transparent"
-                >
-                  <Link href="/contact">Get Quote</Link>
-                </Button>
                 <Button
                   asChild
                   className="w-full bg-[#8fc447] hover:bg-[#79a93b] text-white"

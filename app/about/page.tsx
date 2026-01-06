@@ -57,38 +57,46 @@ export default function AboutPage() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    Our <span className="text-[#246598]">Mission</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Mission Card */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#246598] to-[#1a4a70] rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#246598] to-[#1a4a70] flex items-center justify-center shadow-lg">
+                      <Target className="w-8 h-8 text-white" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900">
+                      Our <span className="text-[#246598]">Mission</span>
+                    </h2>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed pl-20">
                     To empower enterprises with seamless, reliable, and secure wireless infrastructure that drives
                     productivity and innovation. We bridge the connectivity gap, ensuring your operations are always
                     connected, always on.
                   </p>
                 </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    Our <span className="text-[#8fc447]">Vision</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+              </div>
+
+              {/* Vision Card */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#8fc447] to-[#79a93b] rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8fc447] to-[#79a93b] flex items-center justify-center shadow-lg">
+                      <Zap className="w-8 h-8 text-white" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900">
+                      Our <span className="text-[#8fc447]">Vision</span>
+                    </h2>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed pl-20">
                     To be the most trusted partner for enterprise wireless solutions globally, recognized for our
                     technical excellence, innovative approach, and unwavering commitment to our clients' success.
                   </p>
                 </div>
-              </div>
-              <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/solutions-private-5g.jpg"
-                  alt="Team collaborating on a network design"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
             </div>
           </div>
